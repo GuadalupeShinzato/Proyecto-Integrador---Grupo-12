@@ -4,7 +4,7 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
+  --yellow: #b30a9c;
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
@@ -391,10 +391,10 @@ hr {
 }
 
 .action-button.edit {
-  background-color: chocolate;
+  background-color: rgba(194, 84, 5, 0.699);
 }
 .action-button.delete {
-  background-color: rgb(248, 69, 37);
+  background-color: rgb(167, 27, 2);
 }
 .comments {
   padding: 30px 15px 15px 0;
