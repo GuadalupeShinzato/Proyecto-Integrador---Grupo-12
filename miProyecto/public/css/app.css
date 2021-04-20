@@ -78,14 +78,9 @@ hr {
   margin-top: 25px;
 }
 
-.row{
-  align-content: center;
-  text-align: center;
-}
-
 .main-header_home-link{
   width: 25%;
-  }
+}
 
 .main-header_home-link,
 .main-header_credit-link {
