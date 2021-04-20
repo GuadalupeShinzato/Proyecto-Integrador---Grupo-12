@@ -1,0 +1,60 @@
+let libros = {
+    lista: [
+        {
+           titulo:
+           autor:
+           portada:
+           descripcion: 
+        }, 
+        {
+            titulo:
+            autor:
+            portada:
+            descripcion: 
+         },
+         {
+            titulo:
+            autor:
+            portada:
+            descripcion: 
+         },
+         {
+            titulo:
+            autor:
+            portada:
+            descripcion: 
+         }, 
+         {
+            titulo:
+            autor:
+            portada:
+            descripcion: 
+         }, 
+         {
+            titulo:
+            autor:
+            portada:
+            descripcion: 
+         }, 
+         {
+            titulo:
+            autor:
+            portada:
+            descripcion: 
+         }, 
+         {
+            titulo:
+            autor:
+            portada:
+            descripcion: 
+         }, 
+         {
+            titulo:
+            autor:
+            portada:
+            descripcion: 
+         },
+    ],
+};
+
+module.exports = libros; 
