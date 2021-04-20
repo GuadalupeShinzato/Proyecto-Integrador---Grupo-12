@@ -66,14 +66,19 @@ hr {
 
 
 /*====== Main Header ======*/
-.main-header {
+.main-header{
   padding: 15px;
   background-color: var(--yellow);
 }
 
+.titulo{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgb(0, 25, 48);
+}
 .main-header .container{
 box-sizing: border-box;
 }
+
 .columnasHeader{
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
