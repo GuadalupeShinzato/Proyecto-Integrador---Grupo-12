@@ -70,13 +70,16 @@ hr {
   padding: 15px;
   background-color: var(--yellow);
 }
-/*
-.row-align-items-center{
-display: grid;
-grid-template-rows: 1fr;
-grid-template-columns: 1fr, 1fr, 1fr;
+
+.main-header .container{
+box-sizing: border-box;
 }
-*/
+.columnasHeader{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-rows: 1fr;
+}
+
 .main-header_home-link{
 width: 120px;
 }
