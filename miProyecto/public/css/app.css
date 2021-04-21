@@ -3,6 +3,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
 /*====== Variables ======*/
 :root {
   --yellow: #1a4669;
@@ -139,6 +141,8 @@ hr {
 .main-navbar {
   margin-top: 20px;
   display: none;
+  font-family: 'Squada One', 'cursive';
+  font-size: small;
 }
 
 .left-navbar,
