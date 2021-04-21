@@ -1,6 +1,7 @@
 /*====== Fonts ======*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 /*====== Variables ======*/
 :root {
@@ -72,10 +73,10 @@ hr {
 }
 
 .titulo{
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Indie Flower', cursive ;
   color: rgb(255, 255, 255);
-  font-size: 50px;
-  margin-top: 25px;
+  font-size: 70px;
+  margin-top: 28px;
 }
 
 .main-header_home-link{
