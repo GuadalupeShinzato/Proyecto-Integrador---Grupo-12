@@ -7,4 +7,4 @@ const controller = require('../Controllers12/productController')
 router.get('/', controller.index);
 router.get('/add', controller.add)
 
-module.exports = router 
+module.exports = router

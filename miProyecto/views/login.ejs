@@ -1,36 +1,36 @@
 	<!-- /Head -->
-	<%- include('./partials/head')%> 
+	<%- include('./partials/head')%>
 	<!-- /Head -->
 
-<body>
-	<!-- /Header -->
-	<%- include('./partials/header')%> 
-	<!-- /Header -->
-	
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Ingresar</h2>
+	<body>
+		<!-- /Header -->
+		<%- include('./partials/header')%>
+		<!-- /Header -->
+
+		<!-- Novedades -->
+		<div class="container products-wrapper">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="products-title">Ingresar</h2>
+				</div>
+				<!-- Show the "ultimos" products -->
+				<div class="formulario">
+					<form action="/profile" method="GET">
+
+						<label class="form-label" class="form-label" for="">Nombre de Usuario:</label>
+						<input class="form-input" name="usuario" value="" type="text" placeholder="Ej: Camila">
+
+						<label class="form-label" for="">Contraseña:</label>
+						<input class="form-input" name="contrasena" value="" type="text" placeholder="Ej: ******">
+
+						<button type="submit" class="boton"> Iniciar sesion</button>
+					</form>
+				</div>
 			</div>
-			<!-- Show the "ultimos" products -->
-			<div class="formulario">
-				<form action="/profile" method="GET">
+		</div>
+		<!-- footer -->
+		<%- include('./partials/footer')%>
+		<!-- /footer -->
+	</body>
 
-					<label class="form-label" class="form-label" for="">Nombre de Usuario:</label>
-					<input class="form-input" name="usuario" value=""  type="text" placeholder="Ej: Camila">
-
-					<label class="form-label" for="">Contraseña:</label>
-					<input class="form-input" name="contrasena" value=""  type="text" placeholder="Ej: ******">
-
-					<button type="submit" class="boton"> Iniciar sesion</button>
-				</form>
-			</div>
-		</div>	
-	</div>
-	<!-- footer -->
-	<%- include('./partials/footer')%> 
-	<!-- /footer -->
-</body>
-
-</html>
+	</html>

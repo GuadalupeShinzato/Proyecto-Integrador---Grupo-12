@@ -1,43 +1,44 @@
 	<!-- /Head -->
-	<%- include('./partials/head')%> 
+	<%- include('./partials/head')%>
 	<!-- /Head -->
 
-<body>
+	<body>
 		<!-- /Header -->
-		<%- include('./partials/headerLogueado')%> 
+		<%- include('./partials/headerLogueado')%>
 		<!-- /Header -->
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Agregar productos</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<div class="formulario">
-				<form action="/product" method="GET">
-					<label class="form-label" for="">Titulo</label>
-					<input class="form-input" name="nombre" value=""  type="text" placeholder="Ej: The Dictionary of Lost Words">
+		<!-- Novedades -->
+		<div class="container products-wrapper">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="products-title">Agregar productos</h2>
+				</div>
+				<!-- Show the "ultimos" products -->
+				<div class="formulario">
+					<form action="/product" method="GET">
+						<label class="form-label" for="">Titulo</label>
+						<input class="form-input" name="nombre" value="" type="text"
+							placeholder="Ej: The Dictionary of Lost Words">
 
-					<label class="form-label" for="">Autor</label>
-					<input class="form-input" name="apellido" value=""  type="text" placeholder="Ej: Pip Williams">
+						<label class="form-label" for="">Autor</label>
+						<input class="form-input" name="apellido" value="" type="text" placeholder="Ej: Pip Williams">
 
-					<label class="form-label" for="">Portada</label>
-					<input class="form-input" name="email" value=""  type="file" placeholder="">
+						<label class="form-label" for="">Portada</label>
+						<input class="form-input" name="email" value="" type="file" placeholder="">
 
-					<label class="form-label" class="form-label" for="">Descripción</label>
-					<input class="form-input" name="usuario" value=""  type="text" placeholder="">
+						<label class="form-label" class="form-label" for="">Descripción</label>
+						<input class="form-input" name="usuario" value="" type="text" placeholder="">
 
-					<button type="submit" class="boton"> Agregar producto</button>
-				</form>
+						<button type="submit" class="boton"> Agregar producto</button>
+					</form>
+				</div>
 			</div>
 		</div>
-	</div>
 
 
-	<!-- footer -->
-	<%- include('./partials/footer')%> 
-	<!-- /footer -->
-</body>
+		<!-- footer -->
+		<%- include('./partials/footer')%>
+		<!-- /footer -->
+	</body>
 
-</html>
+	</html>

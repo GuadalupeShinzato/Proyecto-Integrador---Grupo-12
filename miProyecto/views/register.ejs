@@ -1,48 +1,48 @@
 	<!-- /Head -->
-	<%- include('./partials/head')%> 
+	<%- include('./partials/head')%>
 	<!-- /Head -->
 
-<body>
-	<!-- /Header -->
-	<%- include('./partials/header')%> 
-	<!-- /Header -->
+	<body>
+		<!-- /Header -->
+		<%- include('./partials/header')%>
+		<!-- /Header -->
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Registrate</h2>
+		<!-- Novedades -->
+		<div class="container products-wrapper">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="products-title">Registrate</h2>
+				</div>
+				<!-- Show the "ultimos" products -->
+				<div class="formulario">
+					<form action="/profile" method="GET">
+						<label class="form-label" for="">Nombre:</label>
+						<input class="form-input" name="nombre" value="" type="text" placeholder="Ej: Camila">
+
+						<label class="form-label" for="">Apellido:</label>
+						<input class="form-input" name="apellido" value="" type="text" placeholder="Ej: Rodriguez">
+
+						<label class="form-label" for="">E-mail:</label>
+						<input class="form-input" name="email" value="" type="email" placeholder="Ej: camirodriguez@gmail.com">
+
+						<label class="form-label" class="form-label" for="">Nombre de Usuario:</label>
+						<input class="form-input" name="usuario" value="" type="text" placeholder="Ej: Camila">
+
+						<label class="form-label" for="">Contraseña:</label>
+						<input class="form-input" name="contrasena" value="" type="text" placeholder="******">
+
+						<label class="form-label" for="">Confirmar contraseña:</label>
+						<input class="form-input" name="con_contra" value="" type="text" placeholder="******">
+
+						<button type="submit" class="boton"> Iniciar sesion</button>
+					</form>
+				</div>
+
 			</div>
-			<!-- Show the "ultimos" products -->
-			<div class="formulario">
-				<form action="/profile" method="GET">
-					<label class="form-label" for="">Nombre:</label>
-					<input class="form-input" name="nombre" value=""  type="text" placeholder="Camila">
-
-					<label class="form-label" for="">Apellido:</label>
-					<input class="form-input" name="apellido" value=""  type="text" placeholder="Rodriguez">
-
-					<label class="form-label" for="">E-mail:</label>
-					<input class="form-input" name="email" value=""  type="email" placeholder="camirodriguez@gmail.com">
-
-					<label class="form-label" class="form-label" for="">Nombre de Usuario:</label>
-					<input class="form-input" name="usuario" value=""  type="text" placeholder="Camila">
-
-					<label class="form-label" for="">Contraseña:</label>
-					<input class="form-input" name="contrasena" value=""  type="text" placeholder="******">
-
-					<label class="form-label" for="">Confirmar contraseña:</label>
-					<input class="form-input"  name="con_contra" value="" type="text" placeholder="******">
-
-					<button type="submit" class="boton"> Iniciar sesion</button>
-				</form>
-			</div>
-
-		</div>	
-	</div>
+		</div>
 		<!-- footer -->
-		<%- include('./partials/footer')%> 
+		<%- include('./partials/footer')%>
 		<!-- /footer -->
-</body>
+	</body>
 
-</html>
+	</html>
