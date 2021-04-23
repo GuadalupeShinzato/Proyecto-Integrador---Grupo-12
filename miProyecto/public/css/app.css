@@ -69,7 +69,6 @@ hr {
   border-bottom: solid 1px var(--light-gray);
 }
 
-
 /*====== Main Header ======*/
 .main-header{
   padding: 15px;
@@ -349,6 +348,13 @@ hr {
   line-height: 1.5;
 }
 
+.editarProd{
+  color: #1a4669;
+  font-family: 'Roboto Slab', serif;
+  position: relative;
+  top: 4px;
+}
+
 .product-detail-price {
   font-size: 5.5em;
   margin: 10px 0;
@@ -443,6 +449,11 @@ hr {
 }
 .comments .user{
   font-size: 1.7em;
+}
+
+.usuarioNombre{
+  color: #1a4669;
+  font-family: 'Roboto Slab', serif;
 }
 
 /*====== Formularios ======*/
