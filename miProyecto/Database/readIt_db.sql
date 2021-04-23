@@ -20,10 +20,10 @@ FOREIGN KEY (users_id) REFERENCES users(id)
 CREATE TABLE comments (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 comment VARCHAR(250) not null,
-product_id INT UNSIGNED not null,
+products_id INT UNSIGNED not null,
 users_id INT UNSIGNED not null,
 fecha_comment DATE not null,
-FOREIGN KEY (product_id) REFERENCES products(id),
+FOREIGN KEY (products_id) REFERENCES products(id),
 FOREIGN KEY (users_id) REFERENCES users(id)
 );
 
@@ -48,3 +48,83 @@ INSERT INTO products VALUES (DEFAULT, 'Sooley', 'John Grisham', '11.jpg', 'At ju
 
 ALTER TABLE comments
 MODIFY comment VARCHAR (500);
+
+INSERT INTO comments VALUES (DEFAULT, 'Muy buen libro, altamente recomendable!', '21/07/2001', 1, 1);
+INSERT INTO comments VALUES (DEFAULT, 'Me pareció desagradable la forma en que decapitan a la protagonista', '29/10/2001', 1, 2);
+INSERT INTO comments VALUES (DEFAULT, 'Encontré muy interesante la relación entre los personajes y la trama', '26/02/2021', 1, 3);
+INSERT INTO comments VALUES (DEFAULT, 'Podría haber hecho más énfasis en las descripciones de los lugares, me gusta imaginarme una trama con un buen fondo', '20/03/2020', 1, 4);
+INSERT INTO comments VALUES (DEFAULT, 'No me pareció interesante el desenlace de la historia', '08/10/2020', 1, 5);
+INSERT INTO comments VALUES (DEFAULT, 'Excelentee libro, además me llegó en buen estado y a tiempo', '22/04//2021', 1, 6);
+INSERT INTO comments VALUES (DEFAULT, 'Me vino fallado de fábrica! Le faltaron las páginas 3, 4 y 5', '31/03/2021', 1, 7);
+
+INSERT INTO comments VALUES (DEFAULT, 'Muy buen libro, altamente recomendable!', '21/07/2001', 2, 1);
+INSERT INTO comments VALUES (DEFAULT, 'Me pareció desagradable la forma en que decapitan a la protagonista', '29/10/2001', 2, 2);
+INSERT INTO comments VALUES (DEFAULT, 'Encontré muy interesante la relación entre los personajes y la trama', '26/02/2021', 2, 3);
+INSERT INTO comments VALUES (DEFAULT, 'Podría haber hecho más énfasis en las descripciones de los lugares, me gusta imaginarme una trama con un buen fondo', '20/03/2020', 2, 4);
+INSERT INTO comments VALUES (DEFAULT, 'No me pareció interesante el desenlace de la historia', '08/10/2020', 2, 5);
+INSERT INTO comments VALUES (DEFAULT, 'Excelentee libro, además me llegó en buen estado y a tiempo', '22/04//2021', 2, 6);
+INSERT INTO comments VALUES (DEFAULT, 'Me vino fallado de fábrica! Le faltaron las páginas 3, 4 y 5', '31/03/2021', 2, 7);
+
+INSERT INTO comments VALUES (DEFAULT, 'Muy buen libro, altamente recomendable!', '21/07/2001', 3, 1);
+INSERT INTO comments VALUES (DEFAULT, 'Me pareció desagradable la forma en que decapitan a la protagonista', '29/10/2001', 3, 2);
+INSERT INTO comments VALUES (DEFAULT, 'Encontré muy interesante la relación entre los personajes y la trama', '26/02/2021', 3, 3);
+INSERT INTO comments VALUES (DEFAULT, 'Podría haber hecho más énfasis en las descripciones de los lugares, me gusta imaginarme una trama con un buen fondo', '20/03/2020', 3, 4);
+INSERT INTO comments VALUES (DEFAULT, 'No me pareció interesante el desenlace de la historia', '08/10/2020', 3, 5);
+INSERT INTO comments VALUES (DEFAULT, 'Excelentee libro, además me llegó en buen estado y a tiempo', '22/04//2021', 3, 6);
+INSERT INTO comments VALUES (DEFAULT, 'Me vino fallado de fábrica! Le faltaron las páginas 3, 4 y 5', '31/03/2021', 3, 7);
+
+INSERT INTO comments VALUES (DEFAULT, 'Muy buen libro, altamente recomendable!', '21/07/2001', 4, 1);
+INSERT INTO comments VALUES (DEFAULT, 'Me pareció desagradable la forma en que decapitan a la protagonista', '29/10/2001', 4, 2);
+INSERT INTO comments VALUES (DEFAULT, 'Encontré muy interesante la relación entre los personajes y la trama', '26/02/2021', 4, 3);
+INSERT INTO comments VALUES (DEFAULT, 'Podría haber hecho más énfasis en las descripciones de los lugares, me gusta imaginarme una trama con un buen fondo', '20/03/2020', 4, 4);
+INSERT INTO comments VALUES (DEFAULT, 'No me pareció interesante el desenlace de la historia', '08/10/2020', 4, 5);
+INSERT INTO comments VALUES (DEFAULT, 'Excelentee libro, además me llegó en buen estado y a tiempo', '22/04//2021', 4, 6);
+INSERT INTO comments VALUES (DEFAULT, 'Me vino fallado de fábrica! Le faltaron las páginas 3, 4 y 5', '31/03/2021', 4, 7);
+
+INSERT INTO comments VALUES (DEFAULT, 'Muy buen libro, altamente recomendable!', '21/07/2001', 5, 1);
+INSERT INTO comments VALUES (DEFAULT, 'Me pareció desagradable la forma en que decapitan a la protagonista', '29/10/2001', 5, 2);
+INSERT INTO comments VALUES (DEFAULT, 'Encontré muy interesante la relación entre los personajes y la trama', '26/02/2021', 5, 3);
+INSERT INTO comments VALUES (DEFAULT, 'Podría haber hecho más énfasis en las descripciones de los lugares, me gusta imaginarme una trama con un buen fondo', '20/03/2020', 5, 4);
+INSERT INTO comments VALUES (DEFAULT, 'No me pareció interesante el desenlace de la historia', '08/10/2020', 5, 5);
+INSERT INTO comments VALUES (DEFAULT, 'Excelentee libro, además me llegó en buen estado y a tiempo', '22/04//2021', 5, 6);
+INSERT INTO comments VALUES (DEFAULT, 'Me vino fallado de fábrica! Le faltaron las páginas 3, 4 y 5', '31/03/2021', 5, 7);
+
+INSERT INTO comments VALUES (DEFAULT, 'Muy buen libro, altamente recomendable!', '21/07/2001', 6, 1);
+INSERT INTO comments VALUES (DEFAULT, 'Me pareció desagradable la forma en que decapitan a la protagonista', '29/10/2001', 6, 2);
+INSERT INTO comments VALUES (DEFAULT, 'Encontré muy interesante la relación entre los personajes y la trama', '26/02/2021', 6, 3);
+INSERT INTO comments VALUES (DEFAULT, 'Podría haber hecho más énfasis en las descripciones de los lugares, me gusta imaginarme una trama con un buen fondo', '20/03/2020', 6, 4);
+INSERT INTO comments VALUES (DEFAULT, 'No me pareció interesante el desenlace de la historia', '08/10/2020', 6, 5);
+INSERT INTO comments VALUES (DEFAULT, 'Excelentee libro, además me llegó en buen estado y a tiempo', '22/04//2021', 6, 6);
+INSERT INTO comments VALUES (DEFAULT, 'Me vino fallado de fábrica! Le faltaron las páginas 3, 4 y 5', '31/03/2021', 6, 7);
+
+INSERT INTO comments VALUES (DEFAULT, 'Muy buen libro, altamente recomendable!', '21/07/2001', 7, 1);
+INSERT INTO comments VALUES (DEFAULT, 'Me pareció desagradable la forma en que decapitan a la protagonista', '29/10/2001', 7, 2);
+INSERT INTO comments VALUES (DEFAULT, 'Encontré muy interesante la relación entre los personajes y la trama', '26/02/2021', 7, 3);
+INSERT INTO comments VALUES (DEFAULT, 'Podría haber hecho más énfasis en las descripciones de los lugares, me gusta imaginarme una trama con un buen fondo', '20/03/2020', 7, 4);
+INSERT INTO comments VALUES (DEFAULT, 'No me pareció interesante el desenlace de la historia', '08/10/2020', 7, 5);
+INSERT INTO comments VALUES (DEFAULT, 'Excelentee libro, además me llegó en buen estado y a tiempo', '22/04//2021', 7, 6);
+INSERT INTO comments VALUES (DEFAULT, 'Me vino fallado de fábrica! Le faltaron las páginas 3, 4 y 5', '31/03/2021', 7, 7);
+
+INSERT INTO comments VALUES (DEFAULT, 'Muy buen libro, altamente recomendable!', '21/07/2001', 8, 1);
+INSERT INTO comments VALUES (DEFAULT, 'Me pareció desagradable la forma en que decapitan a la protagonista', '29/10/2001', 8, 2);
+INSERT INTO comments VALUES (DEFAULT, 'Encontré muy interesante la relación entre los personajes y la trama', '26/02/2021', 8, 3);
+INSERT INTO comments VALUES (DEFAULT, 'Podría haber hecho más énfasis en las descripciones de los lugares, me gusta imaginarme una trama con un buen fondo', '20/03/2020', 8, 4);
+INSERT INTO comments VALUES (DEFAULT, 'No me pareció interesante el desenlace de la historia', '08/10/2020', 8, 5);
+INSERT INTO comments VALUES (DEFAULT, 'Excelentee libro, además me llegó en buen estado y a tiempo', '22/04//2021', 8, 6);
+INSERT INTO comments VALUES (DEFAULT, 'Me vino fallado de fábrica! Le faltaron las páginas 3, 4 y 5', '31/03/2021', 8, 7);
+
+INSERT INTO comments VALUES (DEFAULT, 'Muy buen libro, altamente recomendable!', '21/07/2001', 9, 1);
+INSERT INTO comments VALUES (DEFAULT, 'Me pareció desagradable la forma en que decapitan a la protagonista', '29/10/2001', 9, 2);
+INSERT INTO comments VALUES (DEFAULT, 'Encontré muy interesante la relación entre los personajes y la trama', '26/02/2021', 9, 3);
+INSERT INTO comments VALUES (DEFAULT, 'Podría haber hecho más énfasis en las descripciones de los lugares, me gusta imaginarme una trama con un buen fondo', '20/03/2020', 9, 4);
+INSERT INTO comments VALUES (DEFAULT, 'No me pareció interesante el desenlace de la historia', '08/10/2020', 9, 5);
+INSERT INTO comments VALUES (DEFAULT, 'Excelentee libro, además me llegó en buen estado y a tiempo', '22/04//2021', 9, 6);
+INSERT INTO comments VALUES (DEFAULT, 'Me vino fallado de fábrica! Le faltaron las páginas 3, 4 y 5', '31/03/2021', 9, 7);
+
+INSERT INTO comments VALUES (DEFAULT, 'Muy buen libro, altamente recomendable!', '21/07/2001', 10, 1);
+INSERT INTO comments VALUES (DEFAULT, 'Me pareció desagradable la forma en que decapitan a la protagonista', '29/10/2001', 10, 2);
+INSERT INTO comments VALUES (DEFAULT, 'Encontré muy interesante la relación entre los personajes y la trama', '26/02/2021', 10, 3);
+INSERT INTO comments VALUES (DEFAULT, 'Podría haber hecho más énfasis en las descripciones de los lugares, me gusta imaginarme una trama con un buen fondo', '20/03/2020', 10, 4);
+INSERT INTO comments VALUES (DEFAULT, 'No me pareció interesante el desenlace de la historia', '08/10/2020', 10, 5);
+INSERT INTO comments VALUES (DEFAULT, 'Excelentee libro, además me llegó en buen estado y a tiempo', '22/04//2021', 10, 6);
+INSERT INTO comments VALUES (DEFAULT, 'Me vino fallado de fábrica! Le faltaron las páginas 3, 4 y 5', '31/03/2021', 10, 7);
