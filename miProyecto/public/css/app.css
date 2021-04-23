@@ -5,6 +5,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
 /*====== Variables ======*/
 :root {
   --yellow: #1a4669;
@@ -487,6 +489,7 @@ textarea.form-input {
 .main-title{
   font-size: 25px;
   margin-bottom: 10px;
+  font-family: 'Roboto Slab', serif;
 }
 
 .btn{
