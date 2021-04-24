@@ -5,6 +5,6 @@ const controller = require('../Controllers12/profileController')
 /* GET home page */
 
 router.get('/', controller.index);
-router.get('/edit', controller.edit)
+router.get('/profileEdit', controller.edit)
 
 module.exports = router
