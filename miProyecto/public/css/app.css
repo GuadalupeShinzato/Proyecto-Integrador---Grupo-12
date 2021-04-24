@@ -13,7 +13,7 @@
   --dark-blue: #03264C;
   --light-blue: #1259c3;
   --gray: #666666;
-  --light-gray: #ebebeb;
+  --light-gray: #cecece;
   --green: #39b54a;
   --base-font-family: 'Roboto', sans-serif
 }
@@ -504,12 +504,17 @@ textarea.form-input {
 }
 
 .btn{
-  background-color: #1259c3;
+  background-color: #1a4669;
   padding: 10px 20px;
   border-radius: 4px;
-  color: #fff;
+  color: rgb(255, 255, 255);
 }
 
+#siguiendo{
+  display: none;
+  color: #1a4669;
+  background-color: rgb(255, 255, 255);
+}
 
 /*====== Media-Queries ======*/
 @media (min-width: 768px) {
