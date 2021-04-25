@@ -1,4 +1,4 @@
 const controller ={
-    index: (req, res) => res.render('search'),
+    index: (req, res) => res.render('search-results'),
 }
 module.exports = controller;
