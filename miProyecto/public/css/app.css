@@ -80,6 +80,9 @@ hr {
   color: rgb(255, 255, 255);
   font-size: 70px;
   margin-top: 28px;
+  text-align: left;
+  position: relative;
+  right: 80px;
 }
 
 .main-header_home-link{
