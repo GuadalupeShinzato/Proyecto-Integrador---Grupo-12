@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS readit_db;
+CREATE DATABASE readit_db;
+USE readit_db;
+
 CREATE TABLE users (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 name VARCHAR(100) not null,
