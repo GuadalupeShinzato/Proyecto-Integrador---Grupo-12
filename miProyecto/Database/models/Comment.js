@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    const Comments = sequelize.define('Comentarios', {
+    const Comment = sequelize.define('Comment', {
         id:{
             autoIncrement: true,
             primaryKey: true,
@@ -23,5 +23,17 @@ module.exports = (sequelize, dataTypes) => {
 
     });
 
-    return Comments ;
+    Comment.associate=(db)=>{
+        Comment.belongsTo(db.Product,{
+            as:"producto",
+            foreignKey:"products_id"
+        });
+        Comment.belongsTo(db.User,{
+            as:"usuario",
+            foreignKey:"users_id"
+        });
+
+    } 
+
+    return Comment;
 }
