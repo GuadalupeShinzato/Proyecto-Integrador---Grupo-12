@@ -51,62 +51,23 @@
 					<h2 class="products-title">Now Trending </h2>
 				</div>
 				<!-- Show the "ultimos" products -->
+			<% for( let i = 0; i < 4; i++ ) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="product">
+						<a href="product/id/<%= productos[i].id %> ">
 							<figure class="product-box_image">
-								<img src="./images/Hardcode/1/foto1.jpeg" alt="Dictionary of Lost Words">
+								<img src="<%= productos[i].cover %> " alt="<%= productos[i].title %> ">
 							</figure>
 							<article class="product-box_data">
-								<h2>The Dictionary of Lost Words</h2>
-								<p>Pip Williams</p>
+								<h2><%= productos[i].title %></h2>
+								<p><%= productos[i].author %></p>
 								<p>Comentarios: 12</p>
 							</article>
 						</a>
 					</section>
 				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="product">
-							<figure class="product-box_image">
-								<img src="./images/Hardcode/2/f2.1.jpeg" alt="Go Tell the Bees that I am Gone">
-							</figure>
-							<article class="product-box_data">
-								<h2>Go Tell the Bees That I am Gone</h2>
-								<p>Diana Gabaldon</p>
-								<p>Comentarios: 12</p>
-							</article>
-						</a>
-					</section>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="product">
-							<figure class="product-box_image">
-								<img src="./images/Hardcode/3/f3.1.jpeg" alt="Once Upon a Broken Heart">
-							</figure>
-							<article class="product-box_data">
-								<h2>Once Upon a Broken Heart</h2>
-								<p>Stephanie Garber</p>
-								<p>Comentarios: 12</p>
-							</article>
-						</a>
-					</section>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="product">
-							<figure class="product-box_image">
-								<img src="./images/Hardcode/4/4.1.jpeg" alt="The Crown of Gilded Bones">
-							</figure>
-							<article class="product-box_data">
-								<h2>The Crown of Gilded Bones</h2>
-								<p>Jenniffer L. Armentrout </p>
-								<p>Comentarios: 25</p>
-							</article>
-						</a>
-					</section>
-				</div>
+			<% } %>	
+				
 			</div>
 		</div>
 		<!-- /Novedades -->
@@ -115,67 +76,27 @@
 			<div class="row">
 				<div class="col-12">
 					<h2 class="products-title">Best Sellers</h2>
-				</div>
-				<!-- Show the "ultimos" products -->
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="product">
-							<figure class="product-box_image">
-								<img src="./images/Hardcode/6/6.jpeg" alt="Attack on Titan">
-							</figure>
-							<article class="product-box_data">
-								<h2>Attack on Titan</h2>
-								<p>Hajime Isayama</p>
-								<p>Comentarios: 12</p>
-							</article>
-						</a>
-					</section>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="product">
-							<figure class="product-box_image">
-								<img src="./images/Hardcode/5/5.1.jpeg" alt="The Christmas Pig">
-							</figure>
-							<article class="product-box_data">
-								<h2>The Christmas Pig</h2>
-								<p>J.K. Rowling</p>
-								<p>Comentarios: 8</p>
-							</article>
-						</a>
-					</section>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="product">
-							<figure class="product-box_image">
-								<img src="./images/Hardcode/8/8.jpeg" alt="Freed">
-							</figure>
-							<article class="product-box_data">
-								<h2>Freed</h2>
-								<p>El James</p>
-								<p>Comentarios: 21</p>
-							</article>
-						</a>
-					</section>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="product">
-							<figure class="product-box_image">
-								<img src="./images/Hardcode/9/9.jpeg" alt="The Good Sister">
-							</figure>
-							<article class="product-box_data">
-								<h2>The Good Sister</h2>
-								<p>Sally Hepworth</p>
-								<p>Comentarios: 12</p>
-							</article>
-						</a>
-					</section>
-				</div>
+				
+			    </div>
+				<% for( let i = 4; i < 8; i++ ) { %>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="product/id/<%= productos[i].id %>">
+								<figure class="product-box_image">
+									<img src="<%= productos[i].cover %> " alt="<%= productos[i].title %> ">
+								</figure>
+								<article class="product-box_data">
+									<h2><%= productos[i].title %></h2>
+									<p><%= productos[i].author %></p>
+									<p>Comentarios: 12</p>
+								</article>
+							</a>
+						</section>
+					</div>
+				<% } %>	
+				
 			</div>
 		</div>
-		<!-- /Más comentados -->
 
 
 		<!-- footer -->

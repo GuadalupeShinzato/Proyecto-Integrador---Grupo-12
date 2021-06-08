@@ -1,6 +1,15 @@
-const controller ={
+const db = require('../Database/models');
+const Op = db.Sequelize.Op;
+
+const controller = {
     index: (req, res) => {
-        res.render('index');
-} , 
+
+        db.Product.findAll().then(productos => {
+            res.render('index', {
+                productos: productos
+            });
+        })
+
+    },
 }
-module.exports = controller 
+module.exports = controller
