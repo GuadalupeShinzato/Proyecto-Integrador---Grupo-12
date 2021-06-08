@@ -10,7 +10,7 @@
 		<!-- product detail -->
 		<div class="container products-wrapper">
 			<div class="d-flex align-items-center">
-				<h2 class="products-title">The Dictionary of Lost Words</h2>
+				<h2 class="products-title"><%= producto.title %> </h2>
 				<p class="product-detail-description">
 					<a class="editarProd" href="/product/add">Editar</a>
 				</p>
@@ -18,52 +18,21 @@
 			<div class="product-detail">
 				<div class="row">
 					<article class="col-12 col-lg-8 product-detail-info">
-						<img src="/images/Hardcode/1/foto1.jpeg" alt="" class="product-detail-img">
-						<p class="product-detail-description">Pip Williams’ clever and charming debut introduces us to Esme, the daughter of one of the lexicographers working on the first edition of the OED. As she grows up, she learns that many of the discarded words are related to women’s experiences, so she sets out to write her very own "Dictionary of Lost Words". This delightful page-turner will make readers think about the power of language, who decides which words get written into our shared history, and whose stories may have been left out.</p>
+						<img src="<%= producto.cover %> " alt="" class="product-detail-img">
+						<p class="product-detail-description"><%= producto.description %> </p>
 					</article>
 					<div class="col-12 col-lg-4">
 						<section class="comments">
-							<article>
-								<img src="https://via.placeholder.com/35" alt="">
-								<div class="data">
-									<p class="user">
-										<strong> <a class="usuarioNombre" href="profile">jkrowling: </a> </strong>
-										This is a terrific book! It is gripping, beautifully written, and filled with wisdom and heart. The characters walk into your heart and live there, bringing with them both sadness and joy, pain and love. Jo Anne Tompkins is a fine writer. I cannot recommend this book highly enough.</p>
-								</div>
-							</article>
-							<article>
-								<img src="https://via.placeholder.com/35" alt="">
-								<div class="data">
-									<p class="user">
-										<strong> <a class="usuarioNombre" href="profile">EJacobs: </a> </strong>
-										This dazzling debut has the heart and soul of a classic, the propulsive power of a thriller, and the aching beauty of a major work of art. Tompkins’s characters are so brimming with love and hurt that I felt I was living through them as I devoured their struggle for family and forgiveness. Isaac’s spiritual reckoning, Evangeline’s desperate aliveness, and the depth of understanding embodied by one unforgettable dog will stay with me forever. What Comes After is destined to be among the very best books of 2021.</p>
-								</div>
-							</article>
-							<article>
-								<img src="https://via.placeholder.com/35" alt="">
-								<div class="data">
-									<p class="user">
-										<strong> <a class="usuarioNombre" href="profile">JohnnaW: </a> </strong>
-										Wowza, what a book! One that is not only a great thrill feast, full of chills, twist and turns, and shocks, but also a complete emotional roller coaster! The character development in this book is stunning, so it makes you absolutely hooked, vested, and unable to put it down! I cannot even explain the way this author drove into my emotions, but must say that I think it’s a must read! I highly highly recommend this book!
-									</p>
-								</div>
-							</article>
-							<article>
-								<img src="https://via.placeholder.com/35" alt="">
-								<div class="data">
-									<p class="user">
-										<strong> <a class="usuarioNombre" href="profile">MatisonBaker13: </a> </strong>
-										It was alright. The suspense wasn't too suspenseful, which was what I was hoping for. And unfortunately I feel like the ending could have been way better but overall it was a good read.</p>
-								</div>
-							</article>
-							<article>
-								<img src="https://via.placeholder.com/35" alt="">
-								<div class="data">
-									<p class="user">
-										<strong> <a class="usuarioNombre" href="profile">Lala_3: </a> </strong>
-										I was lucky enough to be among the first of this book's many many many readers. It's destined to be a new classic!</p>
-								</div>
-							</article>
+							<% producto.comentarios.forEach(comentario => { %>
+								<article>
+									<img src="https://via.placeholder.com/35" alt="">
+									<div class="data">
+										<p class="user">
+											<strong> <a class="usuarioNombre" href="profile"><%= comentario.usuario.name %> <%= comentario.usuario.last_name %>: </a> </strong>
+											<%= comentario.comment %> </p>
+									</div>
+								</article>
+							<% }) %>
 
 						</section>
 						<form class="form" action="" method="GET">

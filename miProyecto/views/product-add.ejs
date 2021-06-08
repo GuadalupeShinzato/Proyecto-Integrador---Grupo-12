@@ -15,24 +15,25 @@
 				</div>
 				<!-- Show the "ultimos" products -->
 				<div class="formulario">
-					<form action="/product" method="GET">
-						<label class="form-label" for="">Titulo</label>
+					<form action="/product/add" method="POST">
+						<!-- <label class="form-label" for="">Titulo</label>
 						<input class="form-input" name="Titulo" value="" type="text"
-							placeholder="Ej: The Dictionary of Lost Words">
+							placeholder="Ej: The Dictionary of Lost Words"> -->
+						Titulo:	<input type="text" name="titulo" value="">
 
-						<label class="form-label" for="">Autor</label>
-						<input class="form-input" name="Autor" value="" type="text" placeholder="Ej: Pip Williams">
+						<!-- <label class="form-label" for="">Autor</label>
+						<input class="form-input" name="Autor" value="" type="text" placeholder="Ej: Pip Williams"> -->
+						Autor: <input type="text" name="autor" value="">
 
-						<label class="form-label" for="">Portada</label>
-						<input class="form-input" name="Portada" value="" type="file" placeholder="">
+						<!-- <label class="form-label" for="">Portada</label>
+						<input class="form-input" name="Portada" value="" type="file" placeholder=""> -->
+						Portada: <input type="file" name="portada" id="">
 
-						<label class="form-label" class="form-label" for="">Fecha de publicación</label>
-						<input class="form-input" name="Fecha" value="" type="text" placeholder="">
+						<!-- <label class="form-label" class="form-label" for="">Descripción</label>
+						<input class="form-input" name="Descripción" value="" type="text" placeholder=""> -->
+						Descripción: <input type="text" name="descripcion" value="">
 
-						<label class="form-label" class="form-label" for="">Descripción</label>
-						<input class="form-input" name="Descripción" value="" type="text" placeholder="">
-
-						<button type="submit" class="boton"> Agregar producto</button>
+						<input type="submit" class="boton"> Agregar producto</input>
 					</form>
 				</div>
 			</div>
