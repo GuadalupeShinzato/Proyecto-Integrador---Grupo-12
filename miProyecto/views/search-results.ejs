@@ -15,62 +15,22 @@
 					<h2 class="products-title">Resultados de búsqueda</h2>
 				</div>
 				<!-- Show the "ultimos" products -->
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="product">
-							<figure class="product-box_image">
-								<img src="./images/Hardcode/1/foto1.jpeg" alt="Dictionary of Lost Words">
-							</figure>
-							<article class="product-box_data">
-								<h2>The Dictionary of Lost Words</h2>
-								<p>Pip Williams</p>
-								<p>Comentarios: 12</p>
-							</article>
-						</a>
-					</section>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="product">
-							<figure class="product-box_image">
-								<img src="./images/Hardcode/2/f2.1.jpeg" alt="Go Tell the Bees that I am Gone">
-							</figure>
-							<article class="product-box_data">
-								<h2>Go Tell the Bees That I am Gone</h2>
-								<p>Diana Gabaldon</p>
-								<p>Comentarios: 12</p>
-							</article>
-						</a>
-					</section>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="product">
-							<figure class="product-box_image">
-								<img src="./images/Hardcode/3/f3.1.jpeg" alt="Once Upon a Broken Heart">
-							</figure>
-							<article class="product-box_data">
-								<h2>Once Upon a Broken Heart</h2>
-								<p>Stephanie Garber</p>
-								<p>Comentarios: 12</p>
-							</article>
-						</a>
-					</section>
-				</div>
-				<div class="col-12 col-sm-6 col-lg-3">
-					<section class="product-box">
-						<a href="product">
-							<figure class="product-box_image">
-								<img src="./images/Hardcode/4/4.1.jpeg" alt="The Crown of Gilded Bones">
-							</figure>
-							<article class="product-box_data">
-								<h2>The Crown of Gilded Bones</h2>
-								<p>Jenniffer L. Armentrout </p>
-								<p>Comentarios: 25</p>
-							</article>
-						</a>
-					</section>
-				</div>
+				<% for( let i = 0; i < productos.length; i++ ) { %>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<section class="product-box">
+							<a href="product/id/<%= productos[i].id %> ">
+								<figure class="product-box_image">
+									<img src="<%= productos[i].cover %> " alt="<%= productos[i].title %> ">
+								</figure>
+								<article class="product-box_data">
+									<h2><%= productos[i].title %></h2>
+									<p><%= productos[i].author %></p>
+									<p>Comentarios: 12</p>
+								</article>
+							</a>
+						</section>
+					</div>
+				<% } %>	
 				</div>
 				
 
