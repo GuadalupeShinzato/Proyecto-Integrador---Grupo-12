@@ -15,30 +15,15 @@
 				</div>
 				<!-- Show the "ultimos" products -->
 				<div class="formulario">
-					<form action="/profile" method="GET">
-						<label class="form-label" for="">Nombre:</label>
-						<input class="form-input" name="nombre" value="" type="text" placeholder="Ej: Marcos">
-
-						<label class="form-label" for="">Apellido:</label>
-						<input class="form-input" name="apellido" value="" type="text" placeholder="Ej: Galperín">
-
-						<label class="form-label" for="">E-mail:</label>
-						<input class="form-input" name="email" value="" type="email" placeholder="Ej: marcosgalperín@gmail.com">
-
-						<label class="form-label" class="form-label" for="">Fecha de nacimiento</label>
-						<input class="form-input" name="usuario" value="" type="text" placeholder="Ej: 1971-10-31">
-
-
-						<label class="form-label" class="form-label" for="">Nombre de Usuario:</label>
-						<input class="form-input" name="usuario" value="" type="text" placeholder="Ej: Marcos">
-
-						<label class="form-label" for="">Contraseña:</label>
-						<input class="form-input" name="contrasena" value="" type="password" placeholder="******">
-
-						<label class="form-label" for="">Confirmar contraseña:</label>
-						<input class="form-input" name="con_contra" value="" type="password" placeholder="******">
-
-						<button type="submit" class="boton"> Iniciar sesion</button>
+					<form action="/profile" method="POST">
+						Nombre: <input type="text" name="nombre" id="">
+						Apellido: <input type="text" name="apellido" id="">
+						E-mail: <input type="email" name="email" id="">
+						Fecha de nacimiento: <input type="date" name="fecha" id="">
+						Nombre de usuario: <input type="text" name="usuario" id="">
+						Contraseña: <input type="password" name="contraseña" id="">
+						Confirmar contraseña: <input type="password" name="confirContra" id="">
+						<input type="submit" value="Registrate">
 					</form>
 				</div>
 
