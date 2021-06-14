@@ -1,44 +1,43 @@
-	<!-- /Head -->
-	<%- include('./partials/head')%>
-	<!-- /Head -->
+<!-- /Head -->
+<%- include('./partials/head')%>
+<!-- /Head -->
 
-	<body>
-		<!-- /Header -->
-		<% if (logueado) { %>
-			<%- include('./partials/headerLogueado')%>
-		<% } else { %>
-		<%- include('./partials/header')%>
-		<% } %> 
-		
-		<!-- /Header -->
-		
-		<!-- Novedades -->
-		<div class="container products-wrapper">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="products-title">Ingresar</h2>
-				</div>
-				<!-- Show the "ultimos" products -->
-				<div class="formulario">
-					<form action="/login" method="POST">
+<body>
+	<!-- /Header -->
+	<% if (logueado) { %>
+		<%- include('./partials/headerLogueado')%>
+	<% } else { %>
+	<%- include('./partials/header')%>
+	<% } %> 
+	
+	<!-- /Header -->
+	
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Ingresar</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<div class="formulario">
+				<form action="/login" method="POST">
 
-						Email: <input type="email" name="email" id="">
-						Contraseña: <input type="password" name="contraseña" id="">
-					    Iniciar Sesion <input type="submit" value="login">
+					<label class="form-label" class="form-label" for="">Nombre de Usuario:</label>
+					<input class="form-input" name="usuario" value="" type="text" placeholder="Ej: Marcos">
 
-						<label class="form-label" for="">Contraseña:</label>
-						<input class="form-input" name="contrasena" value="" type="password" placeholder="Ej: ******">
+					<label class="form-label" for="">Contraseña:</label>
+					<input class="form-input" name="contrasena" value="" type="password" placeholder="Ej: **">
 
-						Recordame <input type="checkbox" name="remember" id="">
+					Recordame <input type="checkbox" name="remember" id="">
 
-						<button type="submit" class="boton"> Iniciar sesion</button>
-					</form>
-				</div>
+					<button type="submit" class="boton"> Iniciar sesion</button>
+				</form>
 			</div>
 		</div>
-		<!-- footer -->
-		<%- include('./partials/footer')%>
-		<!-- /footer -->
-	</body>
+	</div>
+	<!-- footer -->
+	<%- include('./partials/footer')%>
+	<!-- /footer -->
+</body>
 
-	</html>
+</html>
