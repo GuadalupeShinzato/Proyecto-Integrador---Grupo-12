@@ -9,15 +9,14 @@ const controller ={
         let passEncriptada = bcrypt.hashSync(req.body.contraseña); //preguntar confirmar contra
 
         db.User.create({
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
+            name: req.body.nombre,
+            last_name: req.body.apellido,
             email: req.body.email,
-            fechaDeNacimiento: req.body.fecha, //?
-            nombreDeUsuario: req.body.usuario,
-            contraseña: passEncriptada, //pass o contrasena?
-            confirmarContraseña: req.body.confirContra
+            nacimiento: req.body.fecha, //?
+            username: req.body.usuario,
+            password: passEncriptada, //pass o contrasena?
         }).then(user => {
-            res.redirect('/index'); //no funciona, nose pq va al profile
+            res.redirect('/'); //no funciona, nose pq va al profile
         });
     }
 
