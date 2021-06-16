@@ -16,14 +16,24 @@
 		<div class="container products-wrapper">
 			<div class="d-flex align-items-center">
 				<h2 class="products-title"><%= producto.title %> </h2>
-				<p class="product-detail-description">
-					<a class="editarProd" href="/product/add">Editar</a>
-				</p>
+				<% if (logueado && miUsuario.id==producto.users_id) { %>
+					<p class="product-detail-description">
+						<a class="editarProd" href="/product/edit/<%= producto.id %> ">Editar</a>
+					</p>
+					<form action="/product/delete/<%= producto.id %>" method="POST">
+						<button type="submit" class="btn btn-outline-light"> <i class="fas fa-trash" style="color: #B99871;"></i></button>
+					</form>
+				<% } %>
+				
+
+			</div>
+			<div>
+				<h3>Hecho por: <a href="/profile"><%= producto.usuario.name %></a> </h3>
 			</div>
 			<div class="product-detail">
 				<div class="row">
 					<article class="col-12 col-lg-8 product-detail-info">
-						<img src="<%= producto.cover %> " alt="" class="product-detail-img">
+						<img src="/images/products/<%= producto.cover %> " alt="" class="product-detail-img">
 						<p class="product-detail-description"><%= producto.description %> </p>
 					</article>
 					<div class="col-12 col-lg-4">
@@ -40,8 +50,10 @@
 							<% }) %>
 
 						</section>
-						<form class="form" action="" method="GET">
-							<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+						<form class="form" action="/product/comment" method="POST">
+							<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comment">
+							<input type="hidden" name="id" value="<%= producto.id %> ">
+
 							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 						</form>
 						<hr>
