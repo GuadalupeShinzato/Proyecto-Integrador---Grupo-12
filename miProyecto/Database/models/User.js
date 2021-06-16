@@ -23,10 +23,16 @@ module.exports = (sequelize, dataTypes) => {
         password:{
             type: dataTypes.STRING
         },
+        createdAt:{
+            type: dataTypes.DATE,
+            field:"created_at"
+        },
+        updatedAt:{
+            type: dataTypes.DATE,
+            field: "updated_at"
+        },
     }, {
         tableName: "users",
-        timestamps: false
-
     });
 
     User.associate=(db)=>{
