@@ -40,7 +40,7 @@
 						<section class="comments">
 							<% producto.comentarios.forEach(comentario => { %>
 								<article>
-									<img src="https://via.placeholder.com/35" alt="">
+									<img src="/images/users/<%= comentario.usuario.cover %> " alt="">
 									<div class="data">
 										<p class="user">
 											<strong> <a class="usuarioNombre" href="profile"><%= comentario.usuario.name %> <%= comentario.usuario.last_name %>: </a> </strong>

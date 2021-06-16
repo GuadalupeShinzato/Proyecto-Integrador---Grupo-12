@@ -5,9 +5,16 @@ const bcrypt = require('bcryptjs')
 
 const controller = {
     index: (req, res) => {
-        res.render('login');
+        if (!req.session.usuario) {
+            res.render('login', {
+                error: null
+            })
+        } else{
+            res.redirect('/')
+        }
     },
     login: (req, res) => {
+        if(req.body.usuario && req.body.contrasena) {
         db.User.findOne({
                 where: [{
                     username: req.body.usuario
@@ -25,12 +32,19 @@ const controller = {
                         });
                     }
                     res.redirect('/')
+                } else {
+                    res.render('login', {error: 'Uno de los campos es incorrecto'})
                 }
             })
-
+        } else {
+            res.render('login' , {error: 'Ningun campo puede estar vacio'})
+        }
 
 
         ;
-    }
+    }, 
+   
 }
+
+
 module.exports = controller;

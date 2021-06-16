@@ -23,13 +23,15 @@
 				<form action="/login" method="POST">
 
 					<label class="form-label" class="form-label" for="">Nombre de Usuario:</label>
-					<input class="form-input" name="usuario" value="" type="text" placeholder="Ej: Marcos">
+					<input class="form-input" name="usuario" value="" type="text" placeholder="Ej: Marcos" required>
 
 					<label class="form-label" for="">Contraseña:</label>
-					<input class="form-input" name="contrasena" value="" type="password" placeholder="Ej: **">
+					<input class="form-input" name="contrasena" value="" type="password" placeholder="Ej: **" required>
 
 					Recordame <input type="checkbox" name="remember" id="">
-
+				<% if (error) { %>
+				 <h6 style="color: red;"> <%= error %> </h6>
+				<% } %>
 					<button type="submit" class="boton"> Iniciar sesion</button>
 				</form>
 			</div>

@@ -14,9 +14,6 @@ module.exports = (sequelize, dataTypes) => {
         cover:{
             type: dataTypes.STRING
         },
-        publicacion:{
-            type: dataTypes.DATE
-        },
         description:{
             type: dataTypes.STRING
         },
