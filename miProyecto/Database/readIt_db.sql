@@ -60,7 +60,7 @@ INSERT INTO products VALUES (DEFAULT, 'Sooley', 'John Grisham', 'foto11.jpg',  '
 ALTER TABLE comments
 MODIFY comment VARCHAR (500);
 
-SELECT * FROM products;
+-- SELECT * FROM products;
 
 INSERT INTO comments VALUES (DEFAULT, 'Muy buen libro, altamente recomendable!',  1, 1, default, default);
 INSERT INTO comments VALUES (DEFAULT, 'Me pareció desagradable la forma en que decapitan a la protagonista',  1, 2, default, default);
