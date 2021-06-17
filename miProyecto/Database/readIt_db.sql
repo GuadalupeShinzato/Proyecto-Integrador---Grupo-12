@@ -22,7 +22,7 @@ author VARCHAR (100) not null,
 cover VARCHAR (250) not null,
 description TEXT not null,
 users_id INT UNSIGNED not null,
-FOREIGN KEY (users_id) REFERENCES users(id),
+FOREIGN KEY (users_id) REFERENCES users(id) ON DELETE CASCADE,
 created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
@@ -32,8 +32,8 @@ id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 comment VARCHAR(250) not null,
 products_id INT UNSIGNED not null,
 users_id INT UNSIGNED not null,
-FOREIGN KEY (products_id) REFERENCES products(id),
-FOREIGN KEY (users_id) REFERENCES users(id),
+FOREIGN KEY (products_id) REFERENCES products(id) ON DELETE CASCADE,
+FOREIGN KEY (users_id) REFERENCES users(id) ON DELETE CASCADE,
 created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );

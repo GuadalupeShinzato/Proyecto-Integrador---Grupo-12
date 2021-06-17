@@ -4,9 +4,9 @@ const controller = require('../Controllers12/profileController')
 
 /* GET home page */
 
-router.get('/', controller.index);
-router.get('/profileEdit', controller.edit);
-
+router.get('/id/:id', controller.index);
+router.get('/profileEdit/:id', controller.edit);
+router.post('/profileEdit', controller.update);
 
 
 module.exports = router
