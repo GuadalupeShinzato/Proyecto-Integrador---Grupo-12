@@ -27,10 +27,10 @@ const controller = {
                             name: req.body.nombre,
                             last_name: req.body.apellido,
                             email: req.body.email,
-                            nacimiento: req.body.fecha, //?
+                            nacimiento: req.body.fecha, 
                             username: req.body.usuario,
                             cover: req.file.filename , 
-                            password: passEncriptada, //pass o contrasena?
+                            password: passEncriptada, 
                         }).then(user => {
                             req.session.usuario = {
                                 id: user.id,
