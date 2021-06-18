@@ -31,16 +31,23 @@ const controller = {
     },
 
     create: (req, res) => {
+       if(req.session.usuario){
         db.Product.create({
-                title: req.body.titulo,
-                author: req.body.autor,
-                cover: req.file.filename,
-                description: req.body.descripcion,
-                users_id: req.session.usuario.id
-            })
-            .then(producto => {
-                res.redirect("/product/id/" + producto.id)
-            })
+            title: req.body.titulo,
+            author: req.body.autor,
+            cover: req.file.filename,
+            description: req.body.descripcion,
+            users_id: req.session.usuario.id
+        })
+        .then(producto => {
+            res.redirect("/product/id/" + producto.id)
+        })
+      }
+       else{
+           res.render('product-add', {
+               error: 'No se pueden dejar campos vacíos'
+           })
+       }
     },
     edit: (req, res) => {
         if (req.session.usuario) {
