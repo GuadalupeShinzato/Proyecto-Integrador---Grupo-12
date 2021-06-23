@@ -12,7 +12,9 @@ const controller = {
             }, {
                 association: "usuario"
             }],
-            order:[['comentarios','created_at','desc']],
+            order: [
+                ['comentarios', 'created_at', 'desc']
+            ],
         }).then(producto => {
             res.render('product', {
                 producto: producto
@@ -31,23 +33,22 @@ const controller = {
     },
 
     create: (req, res) => {
-       if(req.session.usuario){
-        db.Product.create({
-            title: req.body.titulo,
-            author: req.body.autor,
-            cover: req.file.filename,
-            description: req.body.descripcion,
-            users_id: req.session.usuario.id
-        })
-        .then(producto => {
-            res.redirect("/product/id/" + producto.id)
-        })
-      }
-       else{
-           res.render('product-add', {
-               error: 'No se pueden dejar campos vacíos'
-           })
-       }
+        if (req.session.usuario) {
+            db.Product.create({
+                    title: req.body.titulo,
+                    author: req.body.autor,
+                    cover: req.file.filename,
+                    description: req.body.descripcion,
+                    users_id: req.session.usuario.id
+                })
+                .then(producto => {
+                    res.redirect("/product/id/" + producto.id)
+                })
+        } else {
+            res.render('product-add', {
+                error: 'No se pueden dejar campos vacíos'
+            })
+        }
     },
     edit: (req, res) => {
         if (req.session.usuario) {
@@ -110,16 +111,20 @@ const controller = {
         })
     },
 
-    comment: (req, res) =>{
-        if(req.session.usuario){
-            db.Comment.create({
-                comment: req.body.comment,
-                products_id: req.body.id,
-                users_id: req.session.usuario.id
-            }).then(resultado =>{
-                res.redirect('/product/id/'+req.body.id)
-            })
-        }else{
+    comment: (req, res) => {
+        if (req.session.usuario) {
+            if (req.session.usuario) {
+                db.Comment.create({
+                    comment: req.body.comment,
+                    products_id: req.body.id,
+                    users_id: req.session.usuario.id
+                }).then(resultado => {
+                    res.redirect('/product/id/' + req.body.id)
+                })
+            }else{
+                res.render('product/id/' + req.body.id, {error: 'No se puede hacer un comentario en blanco'})
+            }
+        } else {
             return res.redirect('/login')
         }
     }
