@@ -38,13 +38,13 @@ created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO users VALUES (DEFAULT, 'Javier', 'Elizalde', 'jelizalde@udesa.edu.ar','1998-02-23',  'jelizalde0', 'jelizalde0', 'profilepic.jpeg', default, default);
-INSERT INTO users VALUES (DEFAULT, 'Gonzalo', 'Ocampos', 'gocampos@udesa.edu.ar', '1998-02-23', 'gocampos1', 'gocampos1','profilepic.jpeg', default, default);
-INSERT INTO users VALUES (DEFAULT, 'Guadalupe', 'Shinzato', 'gshinzato@udesa.edu.ar','1998-02-23',  'gshinzato2', 'gshinzato2','profilepic.jpeg', default, default);
-INSERT INTO users VALUES (DEFAULT, 'Ezequiel', 'Lagomarsiano', 'elagomarsiano@udesa.edu.ar', '1995-04-15', 'elagomarsiano3', 'elagomarsiano3','profilepic.jpeg', default, default);
-INSERT INTO users VALUES (DEFAULT, 'Sebastián', 'Rellihan', 'srelihhan@udesa.edu.ar', '2000-08-11', 'srelihhan4', 'srelihhan4','profilepic.jpeg', default, default);
-INSERT INTO users VALUES (DEFAULT, 'Marcos', 'Galperín', 'mgalperin@mercadolibre.com.ar', '1971-05-27', 'mgalperin5', 'mgalperin5','profilepic.jpeg', default, default);
-INSERT INTO users VALUES (DEFAULT, 'Alejandro', 'Vivone', 'avivone@udesa.edu.ar', '1981-03-14', 'avivone6', 'avivone6','profilepic.jpeg', default, default);
+INSERT INTO users VALUES (DEFAULT, 'Javier', 'Elizalde', 'jelizalde@udesa.edu.ar','1998-02-23',  'jelizalde0', 'jelizalde0', '/images/profilepic.jpeg', default, default);
+INSERT INTO users VALUES (DEFAULT, 'Gonzalo', 'Ocampos', 'gocampos@udesa.edu.ar', '1998-02-23', 'gocampos1', 'gocampos1','/images/profilepic.jpeg', default, default);
+INSERT INTO users VALUES (DEFAULT, 'Guadalupe', 'Shinzato', 'gshinzato@udesa.edu.ar','1998-02-23',  'gshinzato2', 'gshinzato2','/images/profilepic.jpeg', default, default);
+INSERT INTO users VALUES (DEFAULT, 'Ezequiel', 'Lagomarsiano', 'elagomarsiano@udesa.edu.ar', '1995-04-15', 'elagomarsiano3', 'elagomarsiano3','/images/profilepic.jpeg', default, default);
+INSERT INTO users VALUES (DEFAULT, 'Sebastián', 'Rellihan', 'srelihhan@udesa.edu.ar', '2000-08-11', 'srelihhan4', 'srelihhan4','/images/profilepic.jpeg', default, default);
+INSERT INTO users VALUES (DEFAULT, 'Marcos', 'Galperín', 'mgalperin@mercadolibre.com.ar', '1971-05-27', 'mgalperin5', 'mgalperin5','/images/profilepic.jpeg', default, default);
+INSERT INTO users VALUES (DEFAULT, 'Alejandro', 'Vivone', 'avivone@udesa.edu.ar', '1981-03-14', 'avivone6', 'avivone6','/images/profilepic.jpeg', default, default);
 
 INSERT INTO products VALUES (DEFAULT, 'The Dictionary Of Lost Words', 'Pip Williams', 'foto1.jpeg',  'Esme is born into a world of words. Motherless and irrepressibly curious, she spends her childhood in the ‘Scriptorium’, a garden shed in Oxford where her father and a team of dedicated lexicographers are collecting words for the very first Oxford English Dictionary. Esme’s place is beneath the sorting table, unseen and unheard. One day a slip of paper containing the word ‘bondmaid’ flutters to the floor. Esme rescues the slip and stashes it in an old wooden case that belongs to her friend, Lizzie, a young servant in the big house. Esme begins to collect other words from the Scriptorium that are misplaced, discarded or have been neglected by the dictionary men', '2', default, default);
 INSERT INTO products VALUES (DEFAULT, 'Go Tell the Bees that I am Gone', 'Diana Gabaldon', 'foto2.jpeg',  'Jamie Fraser and Claire Randall were torn apart by the Jacobite Rising in 1743, and it took them twenty years to find each other again. It is 1779 and Claire and Jamie are at last reunited with their daughter, Brianna, her husband, Roger, and their children on Fraser’s Ridge. Having the family together is a dream the Frasers had thought impossible.', '6', default, default);
