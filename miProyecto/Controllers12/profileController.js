@@ -5,27 +5,41 @@ const bcrypt = require('bcryptjs');
 const controller = {
     index: (req, res) => {
         db.User.findByPk(req.params.id, {
-            include: [{
-                    association: 'productos',
-                    include: [{
+                include: [{
+                        association: 'productos',
+                        include: [{
+                            association: 'comentarios'
+                        }]
+                    },
+                    {
                         association: 'comentarios'
-                    }]
-                },
-                {
+                    }
+                ]
+            }).then(resultado => {
+                res.render('profile', {
+                    usuario: resultado
+                })
+            })
+            /*db.Product.findAll({
+                include: [{
+                    association: 'usuario'
+                }, {
                     association: 'comentarios'
-                }
-            ]
-        }).then(resultado => {
-            res.render('profile', {
+                }],
+            }).then(producto => {
+                res.render('profile', {
+                    producto: producto
+                });
+            })*/
+          
+    },
+    edit: (req, res) => {
+        db.User.findByPk(req.params.id).then(resultado => {
+            res.render('profile-edit', {
                 usuario: resultado
             })
         })
-    },
-    edit: (req, res) => {
-        db.User.findByPk(req.params.id) .then(resultado =>{
-            res.render('profile-edit', {usuario:resultado})
-        })
-        
+
     },
     update: (req, res) => {
         let passEncriptada = bcrypt.hashSync(req.body.password);
@@ -41,7 +55,7 @@ const controller = {
             where: {
                 id: req.body.id
             }
-        }) .then(resultado => {
+        }).then(resultado => {
             res.redirect('/profile/id/' + req.body.id)
         })
     }
