@@ -53,7 +53,7 @@
 		<div class="container products-wrapper">
 			<div class="row">
 				<div class="col-12">
-					<h2 class="products-title">Now Trending </h2>
+					<h2 class="products-title">Más recientes</h2>
 				</div>
 				<!-- Show the "ultimos" products -->
 				<% for( let i = 0; i < 4; i++ ) { %>
@@ -68,8 +68,9 @@
 								<h2><%= productosNuevos[i].title %></h2>
 								<p><%= productosNuevos[i].author %></p>
 								<p>Comentarios: <%= productosNuevos[i].comentarios.length %> </p>
-								<p>Creado por: <%= productosNuevos[i].usuario.name %>
-									<%= productosNuevos[i].usuario.last_name %> </p>
+								<p><a
+									href="/profile/id/<%= productosNuevos[i].usuario.id %> "> Creado por:<%= productosNuevos[i].usuario.name %>
+									<%= productosNuevos[i].usuario.last_name %> </a></p>
 							</article>
 						</a>
 					</section>
@@ -83,7 +84,7 @@
 		<div class="container products-wrapper">
 			<div class="row">
 				<div class="col-12">
-					<h2 class="products-title">Best Sellers</h2>
+					<h2 class="products-title">Más Antiguos</h2>
 
 				</div>
 				<% for( let i = 0; i < 4; i++ ) { %>
