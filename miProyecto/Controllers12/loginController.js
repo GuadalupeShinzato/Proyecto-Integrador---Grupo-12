@@ -21,19 +21,24 @@ const controller = {
                 }]
             })
             .then(usuario => {
-                if (usuario && bcrypt.compareSync(req.body.contrasena, usuario.password)) {
-                    req.session.usuario = {
-                        id: usuario.id,
-                        nombre: usuario.username
+                if (usuario) {
+                    if(bcrypt.compareSync(req.body.contrasena, usuario.password)) {
+                        req.session.usuario = {
+                            id: usuario.id,
+                            nombre: usuario.username
+                        }
+                        if (req.body.remember) {
+                            res.cookie('userId', usuario.id, {
+                                maxAge: 1000 * 60 * 5
+                            });
+                        }
+                        res.redirect('/')
+                    } else{
+                        res.render('login', {error: 'La contrasena es incorrecta'})
                     }
-                    if (req.body.remember) {
-                        res.cookie('userId', usuario.id, {
-                            maxAge: 1000 * 60 * 5
-                        });
-                    }
-                    res.redirect('/')
+                  
                 } else {
-                    res.render('login', {error: 'Uno de los campos es incorrecto'})
+                    res.render('login', {error: 'El nombre de usuario es incorrecto'})
                 }
             })
         } else {

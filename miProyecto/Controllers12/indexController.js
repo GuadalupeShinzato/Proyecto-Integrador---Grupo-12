@@ -4,17 +4,37 @@ const Op = db.Sequelize.Op;
 const controller = {
     index: (req, res) => {
 
-        db.Product.findAll().then(productos => {
-            res.render('index', {
-                productos: productos
-            });
+        db.Product.findAll({
+            order: [['createdAt', 'DESC']],
+            include: [{
+                association: 'usuario'
+            }, {
+                association: 'comentarios'
+            }],
+           
+        }).then(productosNuevos => {
+            db.Product.findAll({
+                order: [['createdAt', 'ASC']],
+                include: [{
+                    association: 'usuario'
+                }, {
+                    association: 'comentarios'
+                }],
+                
+            }).then(productosViejos => {
+                res.render('index', {
+                    productosViejos: productosViejos,
+                    productosNuevos: productosNuevos
+
+                });
+            })
         })
 
     },
-    logout: (req,res)=> {
+    logout: (req, res) => {
 
         req.session.destroy()
-        res.clearCookie('userId') 
+        res.clearCookie('userId')
         res.redirect('/')
     }
 

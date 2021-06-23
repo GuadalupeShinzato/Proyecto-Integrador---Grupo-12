@@ -5,11 +5,11 @@
 	<body>
 		<!-- /Header -->
 		<% if (logueado) { %>
-			<%- include('./partials/headerLogueado')%>
+		<%- include('./partials/headerLogueado')%>
 		<% } else { %>
 		<%- include('./partials/header')%>
-		<% } %> 
-		
+		<% } %>
+
 		<!-- /Header -->
 
 
@@ -19,6 +19,12 @@
 				<div class="col-12">
 					<h2 class="products-title">Resultados de búsqueda</h2>
 				</div>
+				<% if (respuesta) { %>
+				<div>
+					<h2 class="products-title"><%= respuesta %> </h2>
+				</div>
+				<% } %>
+
 				<!-- Show the "ultimos" products -->
 				<% for( let i = 0; i < productos.length; i++ ) { %>
 					<div class="col-12 col-sm-6 col-lg-3">
@@ -30,19 +36,21 @@
 								<article class="product-box_data">
 									<h2><%= productos[i].title %></h2>
 									<p><%= productos[i].author %></p>
-									<p>Comentarios: 12</p>
+									<p>Comentarios: <%= productos[i].comentarios.length %> </p>
+									<p>Creado por: <%= productos[i].usuario.name %> <%= productos[i].usuario.last_name %> </p>
 								</article>
 							</a>
 						</section>
 					</div>
-				<% } %>	
-				</div>
-				
+				<% } %>
+			</div>
+		</div>
 
 
-				<!-- footer -->
-				<%- include('./partials/footer')%>
-				<!-- /footer -->
+
+		<!-- footer -->
+		<%- include('./partials/footer')%>
+		<!-- /footer -->
 	</body>
 
 	</html>
