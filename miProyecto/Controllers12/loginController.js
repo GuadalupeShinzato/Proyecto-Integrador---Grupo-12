@@ -9,46 +9,52 @@ const controller = {
             res.render('login', {
                 error: null
             })
-        } else{
+        } else {
             res.redirect('/')
         }
     },
     login: (req, res) => {
-        if(req.body.usuario && req.body.contrasena) {
-        db.User.findOne({
-                where: [{
-                    username: req.body.usuario
-                }]
-            })
-            .then(usuario => {
-                if (usuario) {
-                    if(bcrypt.compareSync(req.body.contrasena, usuario.password)) {
-                        req.session.usuario = {
-                            id: usuario.id,
-                            nombre: usuario.username
+        if (req.body.usuario && req.body.contrasena) {
+            db.User.findOne({
+                    where: [{
+                        username: req.body.usuario
+                    }]
+                })
+                .then(usuario => {
+                    if (usuario) {
+                        if (bcrypt.compareSync(req.body.contrasena, usuario.password)) {
+                            req.session.usuario = {
+                                id: usuario.id,
+                                nombre: usuario.username
+                            }
+                            if (req.body.remember) {
+                                res.cookie('userId', usuario.id, {
+                                    maxAge: 1000 * 60 * 5
+                                });
+                            }
+                            res.redirect('/')
+                        } else {
+                            res.render('login', {
+                                error: 'La contrasena es incorrecta'
+                            })
                         }
-                        if (req.body.remember) {
-                            res.cookie('userId', usuario.id, {
-                                maxAge: 1000 * 60 * 5
-                            });
-                        }
-                        res.redirect('/')
-                    } else{
-                        res.render('login', {error: 'La contrasena es incorrecta'})
+
+                    } else {
+                        res.render('login', {
+                            error: 'El nombre de usuario es incorrecto'
+                        })
                     }
-                  
-                } else {
-                    res.render('login', {error: 'El nombre de usuario es incorrecto'})
-                }
-            })
+                })
         } else {
-            res.render('login' , {error: 'Ningun campo puede estar vacio'})
+            res.render('login', {
+                error: 'Ningun campo puede estar vacio'
+            })
         }
 
 
         ;
-    }, 
-   
+    },
+
 }
 
 

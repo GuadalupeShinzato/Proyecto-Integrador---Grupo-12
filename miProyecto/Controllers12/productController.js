@@ -113,17 +113,13 @@ const controller = {
 
     comment: (req, res) => {
         if (req.session.usuario) {
-            if (req.session.usuario) {
-                db.Comment.create({
-                    comment: req.body.comment,
-                    products_id: req.body.id,
-                    users_id: req.session.usuario.id
-                }).then(resultado => {
-                    res.redirect('/product/id/' + req.body.id)
-                })
-            }else{
-                res.render('product/id/' + req.body.id, {error: 'No se puede hacer un comentario en blanco'})
-            }
+            db.Comment.create({
+                comment: req.body.comment,
+                products_id: req.body.id,
+                users_id: req.session.usuario.id
+            }).then(resultado => {
+                res.redirect('/product/id/' + req.body.id)
+            })
         } else {
             return res.redirect('/login')
         }
