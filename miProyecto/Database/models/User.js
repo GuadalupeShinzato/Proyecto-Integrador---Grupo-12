@@ -1,36 +1,36 @@
 module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define('User', {
-        id:{
+        id: {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        name:{
+        name: {
             type: dataTypes.STRING
         },
-        last_name:{
+        last_name: {
             type: dataTypes.STRING
         },
-        email:{
+        email: {
             type: dataTypes.STRING
         },
-        nacimiento:{
+        nacimiento: {
             type: dataTypes.DATE
         },
-        username:{
+        username: {
             type: dataTypes.STRING
         },
-        password:{
+        password: {
             type: dataTypes.STRING
         },
-        cover:{
+        cover: {
             type: dataTypes.STRING
         },
-        createdAt:{
+        createdAt: {
             type: dataTypes.DATE,
-            field:"created_at"
+            field: "created_at"
         },
-        updatedAt:{
+        updatedAt: {
             type: dataTypes.DATE,
             field: "updated_at"
         },
@@ -38,17 +38,17 @@ module.exports = (sequelize, dataTypes) => {
         tableName: "users",
     });
 
-    User.associate=(db)=>{
-        User.hasMany(db.Product,{
-            as:"productos",
-            foreignKey:"users_id"
+    User.associate = (db) => {
+        User.hasMany(db.Product, {
+            as: "productos",
+            foreignKey: "users_id"
         });
-        User.hasMany(db.Comment,{
-            as:"comentarios",
-            foreignKey:"users_id"
+        User.hasMany(db.Comment, {
+            as: "comentarios",
+            foreignKey: "users_id"
         });
 
-    } 
+    }
 
-    return User ;
+    return User;
 }

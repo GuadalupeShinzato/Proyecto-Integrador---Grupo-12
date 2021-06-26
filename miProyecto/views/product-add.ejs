@@ -5,11 +5,11 @@
 	<body>
 		<!-- /Header -->
 		<% if (logueado) { %>
-			<%- include('./partials/headerLogueado')%>
+		<%- include('./partials/headerLogueado')%>
 		<% } else { %>
 		<%- include('./partials/header')%>
-		<% } %> 
-		
+		<% } %>
+
 		<!-- /Header -->
 
 		<div class="container products-wrapper">
@@ -17,18 +17,18 @@
 				<div class="col-12">
 					<h2 class="products-title">Agregar productos</h2>
 				</div>
-			
+
 				<div class="formulario">
 					<form action="/product/add" method="POST" enctype="multipart/form-data">
-						
-						Titulo:	<input type="text" class="form-input" name="titulo" value="" required>
+
+						Titulo: <input type="text" class="form-input" name="titulo" value="" required>
 
 						Autor: <input type="text" class="form-input" name="autor" value="" required>
 
 						Portada: <input type="file" class="form-input" name="portada" id="" required>
 
 						Descripción: <input type="text" class="form-input" name="descripcion" value="" required>
-						
+
 						<input type="submit" class="boton"> Agregar producto</input>
 					</form>
 				</div>

@@ -24,8 +24,8 @@ const controller = {
                 }],
             })
             .then(productos => {
-               console.log(productos)
-                if (productos==[]) {
+                console.log(productos)
+                if (productos == []) {
                     res.render('search-results', {
                         productos: productos,
                     })

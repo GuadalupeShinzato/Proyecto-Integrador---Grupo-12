@@ -5,33 +5,33 @@ const bcrypt = require('bcryptjs');
 const controller = {
     index: (req, res) => {
         db.User.findByPk(req.params.id, {
-                include: [{
-                        association: 'productos',
-                        include: [{
-                            association: 'comentarios'
-                        }]
-                    },
-                    {
+            include: [{
+                    association: 'productos',
+                    include: [{
                         association: 'comentarios'
-                    }
-                ]
-            }).then(resultado => {
-                res.render('profile', {
-                    usuario: resultado
-                })
-            })
-            /*db.Product.findAll({
-                include: [{
-                    association: 'usuario'
-                }, {
+                    }]
+                },
+                {
                     association: 'comentarios'
-                }],
-            }).then(producto => {
-                res.render('profile', {
-                    producto: producto
-                });
-            })*/
-          
+                }
+            ]
+        }).then(resultado => {
+            res.render('profile', {
+                usuario: resultado
+            })
+        })
+        /*db.Product.findAll({
+            include: [{
+                association: 'usuario'
+            }, {
+                association: 'comentarios'
+            }],
+        }).then(producto => {
+            res.render('profile', {
+                producto: producto
+            });
+        })*/
+
     },
     edit: (req, res) => {
         db.User.findByPk(req.params.id).then(resultado => {

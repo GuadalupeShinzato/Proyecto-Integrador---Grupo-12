@@ -5,11 +5,11 @@
 	<body>
 		<!-- /Header -->
 		<% if (logueado) { %>
-			<%- include('./partials/headerLogueado')%>
+		<%- include('./partials/headerLogueado')%>
 		<% } else { %>
 		<%- include('./partials/header')%>
-		<% } %> 
-		
+		<% } %>
+
 		<!-- /Header -->
 
 		<!-- product detail -->
@@ -17,15 +17,16 @@
 			<div class="d-flex align-items-center">
 				<h2 class="products-title"><%= producto.title %> </h2>
 				<% if (logueado && miUsuario.id==producto.users_id) { %>
-					<p class="product-detail-description">
-						<a class="editarProd" href="/product/edit/<%= producto.id %> ">Editar</a>
-					</p>
-					<form action="/product/delete/<%= producto.id %>" method="POST">
-						<input type="hidden" name="usuario_id" value="<%= producto.users_id %> ">
-						<button type="submit" class="btn btn-outline-light"> <i class="fas fa-trash" style="color: #B99871;"></i></button>
-					</form>
+				<p class="product-detail-description">
+					<a class="editarProd" href="/product/edit/<%= producto.id %> ">Editar</a>
+				</p>
+				<form action="/product/delete/<%= producto.id %>" method="POST">
+					<input type="hidden" name="usuario_id" value="<%= producto.users_id %> ">
+					<button type="submit" class="btn btn-outline-light"> <i class="fas fa-trash"
+							style="color: #B99871;"></i></button>
+				</form>
 				<% } %>
-				
+
 
 			</div>
 			<div>
@@ -40,14 +41,16 @@
 					<div class="col-12 col-lg-4">
 						<section class="comments">
 							<% producto.comentarios.forEach(comentario => { %>
-								<article>
-									<img src="/images/users/<%= comentario.usuario.cover %> " alt="">
-									<div class="data">
-										<p class="user">
-											<strong> <a class="usuarioNombre" href="/profile/id/<%= comentario.usuario.id %> "><%= comentario.usuario.name %> <%= comentario.usuario.last_name %>: </a> </strong>
-											<%= comentario.comment %> </p>
-									</div>
-								</article>
+							<article>
+								<img src="/images/users/<%= comentario.usuario.cover %> " alt="">
+								<div class="data">
+									<p class="user">
+										<strong> <a class="usuarioNombre"
+												href="/profile/id/<%= comentario.usuario.id %> "><%= comentario.usuario.name %>
+												<%= comentario.usuario.last_name %>: </a> </strong>
+										<%= comentario.comment %> </p>
+								</div>
+							</article>
 							<% }) %>
 
 						</section>

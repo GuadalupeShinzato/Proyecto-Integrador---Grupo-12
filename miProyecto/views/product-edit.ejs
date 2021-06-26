@@ -5,11 +5,11 @@
 	<body>
 		<!-- /Header -->
 		<% if (logueado) { %>
-			<%- include('./partials/headerLogueado')%>
+		<%- include('./partials/headerLogueado')%>
 		<% } else { %>
 		<%- include('./partials/header')%>
-		<% } %> 
-		
+		<% } %>
+
 		<!-- /Header -->
 
 		<div class="container products-wrapper">
@@ -17,16 +17,17 @@
 				<div class="col-12">
 					<h2 class="products-title">Editar producto</h2>
 				</div>
-				
+
 				<div class="formulario">
 					<form action="/product/edit" method="POST" enctype="multipart/form-data">
-						
-						Titulo:	<input type="text" class="form-input" name="titulo" value="<%= producto.title %> ">
+
+						Titulo: <input type="text" class="form-input" name="titulo" value="<%= producto.title %> ">
 						Autor: <input type="text" class="form-input" name="autor" value="<%= producto.author %> ">
 						Portada: <input type="file" class="form-input" name="portada" id="">
-						Descripción: <input type="text" class="form-input" name="descripcion" value="<%= producto.description %> ">
+						Descripción: <input type="text" class="form-input" name="descripcion"
+							value="<%= producto.description %> ">
 
-                        <input type="hidden" name="id" value="<%= producto.id %> ">
+						<input type="hidden" name="id" value="<%= producto.id %> ">
 
 						<input type="submit" class="boton"> Editar producto</input>
 					</form>

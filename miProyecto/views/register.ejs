@@ -5,11 +5,11 @@
 	<body>
 		<!-- /Header -->
 		<% if (logueado) { %>
-			<%- include('./partials/headerLogueado')%>
+		<%- include('./partials/headerLogueado')%>
 		<% } else { %>
 		<%- include('./partials/header')%>
-		<% } %> 
-		
+		<% } %>
+
 		<!-- /Header -->
 
 		<!-- Novedades -->
@@ -21,17 +21,18 @@
 				<!-- Show the "ultimos" products -->
 				<div class="formulario">
 					<form action="/register" method="POST" enctype="multipart/form-data">
-						Nombre: <input class="form-input" type="text" name="nombre" id=""  required>
+						Nombre: <input class="form-input" type="text" name="nombre" id="" required>
 						Apellido: <input class="form-input" type="text" name="apellido" id="" required>
 						E-mail: <input class="form-input" type="email" name="email" id="" required>
 						Fecha de nacimiento: <input class="form-input" type="date" name="fecha" id="" required>
 						Nombre de usuario: <input class="form-input" type="text" name="usuario" id="" required>
-						Foto de perfil: <input class="form-input" type="file" name="portada" id="" accept="image/png, image/jpg, image/jpeg">
+						Foto de perfil: <input class="form-input" type="file" name="portada" id=""
+							accept="image/png, image/jpg, image/jpeg">
 						Contraseña: <input class="form-input" type="password" name="contraseña" id="" required>
 						Confirmar contraseña: <input class="form-input" type="password" name="confirContra" id="" required>
 						<% if (error) { %>
-							<h4 style="color: red;"> <%= error %> </h4>
-						   <% } %>
+						<h4 style="color: red;"> <%= error %> </h4>
+						<% } %>
 						<input class="form-input" type="submit" value="Registrate">
 					</form>
 				</div>

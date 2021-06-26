@@ -17,7 +17,7 @@ const controller = {
         if (req.body.nombre && req.body.apellido && req.body.email && req.body.fecha && req.body.usuario && req.body.contraseña) {
             if (req.body.contraseña == req.body.confirContra) {
                 if (req.file) {
-                    let passEncriptada = bcrypt.hashSync(req.body.contraseña); 
+                    let passEncriptada = bcrypt.hashSync(req.body.contraseña);
                     db.User.findOne({
                             where: {
                                 username: req.body.usuario

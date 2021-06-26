@@ -5,22 +5,26 @@ const controller = {
     index: (req, res) => {
 
         db.Product.findAll({
-            order: [['createdAt', 'DESC']],
+            order: [
+                ['createdAt', 'DESC']
+            ],
             include: [{
                 association: 'usuario'
             }, {
                 association: 'comentarios'
             }],
-           
+
         }).then(productosNuevos => {
             db.Product.findAll({
-                order: [['createdAt', 'ASC']],
+                order: [
+                    ['createdAt', 'ASC']
+                ],
                 include: [{
                     association: 'usuario'
                 }, {
                     association: 'comentarios'
                 }],
-                
+
             }).then(productosViejos => {
                 res.render('index', {
                     productosViejos: productosViejos,

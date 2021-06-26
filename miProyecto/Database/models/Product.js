@@ -1,49 +1,49 @@
 module.exports = (sequelize, dataTypes) => {
     const Product = sequelize.define('Product', {
-        id:{
+        id: {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        title:{
+        title: {
             type: dataTypes.STRING
         },
-        author:{
+        author: {
             type: dataTypes.STRING
         },
-        cover:{
+        cover: {
             type: dataTypes.STRING
         },
-        description:{
+        description: {
             type: dataTypes.STRING
         },
-        users_id:{
+        users_id: {
             type: dataTypes.INTEGER
         },
-        createdAt:{
+        createdAt: {
             type: dataTypes.DATE,
-            field:"created_at"
+            field: "created_at"
         },
-        updatedAt:{
+        updatedAt: {
             type: dataTypes.DATE,
-            field:"updated_at"
+            field: "updated_at"
         },
     }, {
         tableName: "products",
 
     });
 
-    Product.associate=(db)=>{
-        Product.belongsTo(db.User,{
-            as:"usuario",
-            foreignKey:"users_id"
+    Product.associate = (db) => {
+        Product.belongsTo(db.User, {
+            as: "usuario",
+            foreignKey: "users_id"
         });
-        Product.hasMany(db.Comment,{
-            as:"comentarios",
-            foreignKey:"products_id"
+        Product.hasMany(db.Comment, {
+            as: "comentarios",
+            foreignKey: "products_id"
         });
-    } 
+    }
 
 
-    return Product ;
+    return Product;
 }
