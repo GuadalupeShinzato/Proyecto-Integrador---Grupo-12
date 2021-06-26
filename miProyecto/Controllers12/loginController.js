@@ -35,7 +35,7 @@ const controller = {
                             res.redirect('/')
                         } else {
                             res.render('login', {
-                                error: 'La contrasena es incorrecta'
+                                error: 'La contraseña es incorrecta'
                             })
                         }
 

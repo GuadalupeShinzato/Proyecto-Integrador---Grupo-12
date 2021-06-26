@@ -29,7 +29,7 @@
 
 			</div>
 			<div>
-				<h3>Hecho por: <a href="/profile/id/<%= producto.usuario.id %>"><%= producto.usuario.name %></a> </h3>
+				<h3>Producto de: <a href="/profile/id/<%= producto.usuario.id %>"><%= producto.usuario.name %></a> </h3>
 			</div>
 			<div class="product-detail">
 				<div class="row">
@@ -52,7 +52,7 @@
 
 						</section>
 						<form class="form" action="/product/comment" method="POST">
-							<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comment" required>
+							<input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comment">
 							<input type="hidden" name="id" value="<%= producto.id %> ">
 
 							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>

@@ -12,35 +12,23 @@
 		
 		<!-- /Header -->
 
-		<!-- Novedades -->
 		<div class="container products-wrapper">
 			<div class="row">
 				<div class="col-12">
-					<h2 class="products-title">Agregar productos</h2>
+					<h2 class="products-title">Editar producto</h2>
 				</div>
-				<!-- Show the "ultimos" products -->
+				
 				<div class="formulario">
 					<form action="/product/edit" method="POST" enctype="multipart/form-data">
-						<!-- <label class="form-label" for="">Titulo</label>
-						<input class="form-input" name="Titulo" value="" type="text"
-							placeholder="Ej: The Dictionary of Lost Words"> -->
+						
 						Titulo:	<input type="text" class="form-input" name="titulo" value="<%= producto.title %> ">
-
-						<!-- <label class="form-label" for="">Autor</label>
-						<input class="form-input" name="Autor" value="" type="text" placeholder="Ej: Pip Williams"> -->
 						Autor: <input type="text" class="form-input" name="autor" value="<%= producto.author %> ">
-
-						<!-- <label class="form-label" for="">Portada</label>
-						<input class="form-input" name="Portada" value="" type="file" placeholder=""> -->
 						Portada: <input type="file" class="form-input" name="portada" id="">
-
-						<!-- <label class="form-label" class="form-label" for="">Descripción</label>
-						<input class="form-input" name="Descripción" value="" type="text" placeholder=""> -->
 						Descripción: <input type="text" class="form-input" name="descripcion" value="<%= producto.description %> ">
 
                         <input type="hidden" name="id" value="<%= producto.id %> ">
 
-						<input type="submit" class="boton"> Agregar producto</input>
+						<input type="submit" class="boton"> Editar producto</input>
 					</form>
 				</div>
 			</div>

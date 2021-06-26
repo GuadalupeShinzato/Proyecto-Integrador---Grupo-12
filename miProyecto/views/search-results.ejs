@@ -37,7 +37,8 @@
 									<h2><%= productos[i].title %></h2>
 									<p><%= productos[i].author %></p>
 									<p>Comentarios: <%= productos[i].comentarios.length %> </p> 
-									<p>Creado por: <%= productos[i].usuario.name %> <%= productos[i].usuario.last_name %> </p>
+									<p> <a href="/profile/id/<%= productos[i].usuario.id %>">Creado por: <%= productos[i].usuario.name %> <%= productos[i].usuario.last_name %></a>
+										 </p>
 								</article>
 							</a>
 						</section>
