@@ -5,11 +5,11 @@
 	<body>
 		<!-- /Header -->
 		<% if (logueado) { %>
-			<%- include('./partials/headerLogueado')%>
+		<%- include('./partials/headerLogueado')%>
 		<% } else { %>
 		<%- include('./partials/header')%>
-		<% } %> 
-		
+		<% } %>
+
 		<!-- /Header -->
 
 
@@ -21,17 +21,20 @@
 				</div>
 				<div class="data-container col-6">
 					<div class="d-flex align-items-center ">
-						<h1 class="main-title"> <%= usuario.name %> <%= usuario.last_name %> 
+						<h1 class="main-title"> <%= usuario.name %> <%= usuario.last_name %>
+							<% if (logueado && miUsuario.id == usuario.id) { %>
 							<a href="/profile/profileEdit/<%= usuario.id %> ">
 								<i class="fas fa-cog"></i>
 							</a>
+							<% } %>
+
 						</h1>
 
 					</div>
 					<div>
 						<ul class="">
-							<li><%= usuario.productos.length %>  productos</li>
-							<li><%= usuario.comentarios.length %>  comentarios</li>
+							<li><%= usuario.productos.length %> productos</li>
+							<li><%= usuario.comentarios.length %> comentarios</li>
 						</ul>
 					</div>
 				</div>
@@ -48,27 +51,27 @@
 				<!-- Show mis productos -->
 
 				<% if (usuario.productos.length > 0) { %>
-					<% for( let i = 0; i < usuario.productos.length; i++ ) { %>
-						<% const producto = usuario.productos[i] %> 
-						<div class="col-12 col-sm-6 col-lg-3">
-							<section class="product-box">
-								<a href="/product/id/<%= producto.id %> ">
-									<figure class="product-box_image">
-										<img src="/images/products/<%= producto.cover %> " alt="<%= producto.title %> ">
-									</figure>
-									<article class="product-box_data">
-										<h2><%= producto.title %></h2>
-										<p><%= producto.author %></p>
-										<p>Comentarios: <%= producto.comentarios.length %> </p>
-			
-									</article>
-								</a>
-							</section>
-						</div>
-					<% } %>	
+				<% for( let i = 0; i < usuario.productos.length; i++ ) { %>
+				<% const producto = usuario.productos[i] %>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/product/id/<%= producto.id %> ">
+							<figure class="product-box_image">
+								<img src="/images/products/<%= producto.cover %> " alt="<%= producto.title %> ">
+							</figure>
+							<article class="product-box_data">
+								<h2><%= producto.title %></h2>
+								<p><%= producto.author %></p>
+								<p>Comentarios: <%= producto.comentarios.length %> </p>
+
+							</article>
+						</a>
+					</section>
+				</div>
+				<% } %>
 				<% } else { %>
-					<h2>Todavía no has publicado ningún producto</h2>
-				<% } %>	
+				<h2>Todavía no has publicado ningún producto</h2>
+				<% } %>
 
 			</div>
 		</div>

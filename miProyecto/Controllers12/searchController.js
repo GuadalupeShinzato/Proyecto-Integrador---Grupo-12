@@ -16,18 +16,22 @@ const controller = {
                             }
                         }
                     ]
-                }
+                },
+                include: [{
+                    association: 'usuario'
+                }, {
+                    association: 'comentarios'
+                }],
             })
             .then(productos => {
-                if (productos) {
+               console.log(productos)
+                if (productos==[]) {
                     res.render('search-results', {
                         productos: productos,
-                        respuesta: 'No existen resultados para su criterio de busqueda'
                     })
                 }
                 res.render('search-results', {
-                    productos: productos , 
-                    respuesta: null
+                    productos: productos,
                 })
             })
 

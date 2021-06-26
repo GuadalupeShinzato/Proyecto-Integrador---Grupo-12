@@ -5,11 +5,11 @@
 	<body>
 		<!-- /Header -->
 		<% if (logueado) { %>
-			<%- include('./partials/headerLogueado')%>
+		<%- include('./partials/headerLogueado')%>
 		<% } else { %>
 		<%- include('./partials/header')%>
-		<% } %> 
-		
+		<% } %>
+
 		<!-- /Header -->
 
 
@@ -26,16 +26,19 @@
 						<input class="form-input" name="nombre" value="<%= usuario.name %> " type="text" placeholder="">
 
 						<label class="form-label" for="">Nombre de Usuario:</label>
-						<input class="form-input" name="apellido" value="<%= usuario.last_name%> " type="text" placeholder="">
+						<input class="form-input" name="apellido" value="<%= usuario.last_name%> " type="text"
+							placeholder="">
 
 						<label class="form-label" for="">E-mail:</label>
 						<input class="form-input" name="email" value="<%= usuario.email %> " type="email" placeholder="">
 
 						<label class="form-label" for="">Nombre de Usuario:</label>
-						<input class="form-input" name="usuario" value="<%= usuario.username %> " type="text" placeholder="">
+						<input class="form-input" name="usuario" value="<%= usuario.username %> " type="text"
+							placeholder="">
 
 						<label class="form-label" class="form-label" for="">Nacimiento</label>
-						<input class="form-input" name="fecha" value="<%= usuario.nacimiento %> " type="date" placeholder="">
+						<input class="form-input" name="fecha" value="<%= usuario.nacimiento %> " type="date"
+							placeholder="">
 
 						<label class="form-label" class="form-label" for="">Contraseña</label>
 						<input class="form-input" name="password" type="password" placeholder="">
@@ -45,10 +48,11 @@
 						<button type="submit" class="boton"> Guardar cambios</button>
 					</form>
 				</div>
-
-				<!-- footer -->
-				<%- include('./partials/footer')%>
-				<!-- /footer -->
+			</div>
+		</div>
+		<!-- footer -->
+		<%- include('./partials/footer')%>
+		<!-- /footer -->
 	</body>
 
 	</html>

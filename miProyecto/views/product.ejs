@@ -21,6 +21,7 @@
 						<a class="editarProd" href="/product/edit/<%= producto.id %> ">Editar</a>
 					</p>
 					<form action="/product/delete/<%= producto.id %>" method="POST">
+						<input type="hidden" name="usuario_id" value="<%= producto.users_id %> ">
 						<button type="submit" class="btn btn-outline-light"> <i class="fas fa-trash" style="color: #B99871;"></i></button>
 					</form>
 				<% } %>

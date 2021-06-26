@@ -102,6 +102,10 @@ const controller = {
     },
 
     delete: (req, res) => {
+        if (!req.session.usuario || req.session.usuario.id != req.body.usuario_id) {
+            res.redirect('/')
+        }
+
         db.Product.destroy({
             where: {
                 id: req.params.id
@@ -113,6 +117,10 @@ const controller = {
 
     comment: (req, res) => {
         if (req.session.usuario) {
+            console.log(req.body.comment)
+            if (req.body.comment.length == 0) {
+                res.redirect('/product/id/' + req.body.id)
+            }
             db.Comment.create({
                 comment: req.body.comment,
                 products_id: req.body.id,

@@ -19,9 +19,9 @@
 				<div class="col-12">
 					<h2 class="products-title">Resultados de búsqueda</h2>
 				</div>
-				<% if (respuesta) { %>
+				<% if (productos=="") { %>
 				<div>
-					<h2 class="products-title"><%= respuesta %> </h2>
+					<h2 class="products-title"> No existen resultados para su criterio de búsqueda </h2>
 				</div>
 				<% } %>
 
@@ -36,7 +36,7 @@
 								<article class="product-box_data">
 									<h2><%= productos[i].title %></h2>
 									<p><%= productos[i].author %></p>
-									<p>Comentarios: <%= productos[i].comentarios.length %> </p>
+									<p>Comentarios: <%= productos[i].comentarios.length %> </p> 
 									<p>Creado por: <%= productos[i].usuario.name %> <%= productos[i].usuario.last_name %> </p>
 								</article>
 							</a>
