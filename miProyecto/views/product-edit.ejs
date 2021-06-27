@@ -21,15 +21,15 @@
 				<div class="formulario">
 					<form action="/product/edit" method="POST" enctype="multipart/form-data">
 
-						Titulo: <input type="text" class="form-input" name="titulo" value="<%= producto.title %>">
-						Autor: <input type="text" class="form-input" name="autor" value="<%= producto.author %>">
-						Portada: <input type="file" class="form-input" name="portada" id="">
-						Descripción: <input type="text" class="form-input" name="descripcion"
+						<h3>Título:</h3><input type="text" class="form-input" name="titulo" value="<%= producto.title %>">
+						<h3>Autor: </h3><input type="text" class="form-input" name="autor" value="<%= producto.author %>">
+						<h3>Portada:</h3><input type="file" class="form-input" name="portada" id="">
+						<h3>Descripción: </h3><input type="text" class="form-input" name="descripcion"
 							value="<%= producto.description %>">
 
 						<input type="hidden" name="id" value="<%= producto.id %>">
 
-						<input type="submit" class="boton"> Editar producto</input>
+						<h3><input type="submit" class="boton"> Editar producto</input></h3>
 					</form>
 				</div>
 			</div>
