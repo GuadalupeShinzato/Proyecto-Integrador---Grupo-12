@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
-    const Product = sequelize.define('Product', {
-        id: {
+    const Product = sequelize.define('Product', {   //Un alias que identifica al modelo
+        id: {   //Un objeto con la configuración de las columnas en la base de datos
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
@@ -29,21 +29,22 @@ module.exports = (sequelize, dataTypes) => {
             field: "updated_at"
         },
     }, {
-        tableName: "products",
+        tableName: "products",   //Un objeto donde especificamos el nombre de la tabla
 
     });
 
     Product.associate = (db) => {
-        Product.belongsTo(db.User, {
+        Product.belongsTo(db.User, { //Product pertenece a User
             as: "usuario",
             foreignKey: "users_id"
         });
-        Product.hasMany(db.Comment, {
+        Product.hasMany(db.Comment, { //Product tiene muchos Comment
             as: "comentarios",
             foreignKey: "products_id"
         });
+        //Cada vez que hacemos un .belongsTo o .hasMany en un modelo, es necesario hacer su contraparte en el otro modelo correspondiente
     }
 
 
-    return Product;
+    return Product;  //Como dijimos que es una función, el return nos devuelve los parámetros de la misma
 }
