@@ -21,27 +21,27 @@
 				<div class="formulario">
 					<form action="/profile/profileEdit" method="POST">
 						<label class="form-label" for="">Nombre:</label>
-						<input class="form-input" name="nombre" value="<%= usuario.name %> " type="text" placeholder="">
+						<input class="form-input" name="nombre" value="<%= usuario.name %>" type="text" placeholder="">
 
 						<label class="form-label" for="">Nombre de Usuario:</label>
-						<input class="form-input" name="apellido" value="<%= usuario.last_name%> " type="text"
+						<input class="form-input" name="apellido" value="<%= usuario.last_name%>" type="text"
 							placeholder="">
 
 						<label class="form-label" for="">E-mail:</label>
-						<input class="form-input" name="email" value="<%= usuario.email %> " type="email" placeholder="">
+						<input class="form-input" name="email" value="<%= usuario.email %>" type="email" placeholder="">
 
 						<label class="form-label" for="">Nombre de Usuario:</label>
-						<input class="form-input" name="usuario" value="<%= usuario.username %> " type="text"
+						<input class="form-input" name="usuario" value="<%= usuario.username %>" type="text"
 							placeholder="">
 
 						<label class="form-label" class="form-label" for="">Nacimiento</label>
-						<input class="form-input" name="fecha" value="<%= usuario.nacimiento %> " type="date"
+						<input class="form-input" name="fecha" value="<%= usuario.nacimiento %>" type="date"
 							placeholder="">
 
 						<label class="form-label" class="form-label" for="">Contraseña</label>
 						<input class="form-input" name="password" type="password" placeholder="">
 
-						<input type="hidden" name="id" value="<%= usuario.id %> ">
+						<input type="hidden" name="id" value="<%= usuario.id %>">
 
 						<button type="submit" class="boton"> Guardar cambios</button>
 					</form>

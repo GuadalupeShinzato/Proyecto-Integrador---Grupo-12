@@ -16,6 +16,9 @@ const controller = {
                 }
             ]
         }).then(resultado => {
+            if(req.session.usuario && req.session.usuario.id == resultado.id){
+                req.session.usuario = resultado //updatea la session
+            }
             res.render('profile', {
                 usuario: resultado
             })
@@ -42,22 +45,39 @@ const controller = {
 
     },
     update: (req, res) => {
-        let passEncriptada = bcrypt.hashSync(req.body.password);
-        db.User.update({
-            name: req.body.nombre,
-            last_name: req.body.apellido,
-            email: req.body.email,
-            nacimiento: req.body.fecha, //?
-            username: req.body.usuario,
-            //cover: req.file.filename,
-            password: passEncriptada
-        }, {
-            where: {
-                id: req.body.id
-            }
-        }).then(resultado => {
-            res.redirect('/profile/id/' + req.body.id)
-        })
+        if (req.body.password) {
+            let passEncriptada = bcrypt.hashSync(req.body.password);
+            db.User.update({
+                name: req.body.nombre,
+                last_name: req.body.apellido,
+                email: req.body.email,
+                nacimiento: req.body.fecha,
+                username: req.body.usuario,
+                password: passEncriptada
+            }, {
+                where: {
+                    id: req.body.id
+                }
+            }).then(resultado => {
+                //res.send(req.session.usuario)
+                res.redirect('/profile/id/' + req.body.id)
+            })
+        } else {
+            db.User.update({
+                name: req.body.nombre,
+                last_name: req.body.apellido,
+                email: req.body.email,
+                nacimiento: req.body.fecha,
+                username: req.body.usuario,
+            }, {
+                where: {
+                    id: req.body.id
+                }
+            }).then(resultado => {
+                //res.send(resultado)
+               res.redirect('/profile/id/' + req.body.id)
+            })
+        }
     }
 }
 module.exports = controller;
