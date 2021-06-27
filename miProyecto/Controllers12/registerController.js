@@ -15,7 +15,7 @@ const controller = {
 
     createUser: (req, res) => {
         if (req.body.nombre && req.body.apellido && req.body.email && req.body.fecha && req.body.usuario && req.body.contraseña) {
-            if (req.body.contraseña.length <= 3) {
+            if (req.body.contraseña.length >= 4) {
                 if (req.body.contraseña == req.body.confirContra) {
                     if (req.file) {
                         let passEncriptada = bcrypt.hashSync(req.body.contraseña);
