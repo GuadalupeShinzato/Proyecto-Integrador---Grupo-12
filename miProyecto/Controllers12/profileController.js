@@ -16,6 +16,9 @@ const controller = {
                 }
             ]
         }).then(resultado => {
+           if(!resultado){
+               res.redirect('/')
+           }
             if(req.session.usuario && req.session.usuario.id == resultado.id){
                 req.session.usuario = resultado //updatea la session
             }
