@@ -6,7 +6,7 @@ CREATE TABLE users (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 name VARCHAR(100) not null,
 last_name VARCHAR (100) not null,
-email VARCHAR (250) not null UNIQUE,
+email VARCHAR (250) not null,
 nacimiento DATE NOT NULL,
 username VARCHAR (100) not null UNIQUE,
 password VARCHAR (250) not null,

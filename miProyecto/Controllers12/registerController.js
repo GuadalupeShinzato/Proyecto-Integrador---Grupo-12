@@ -34,10 +34,7 @@ const controller = {
                                     cover: req.file.filename,
                                     password: passEncriptada,
                                 }).then(user => {
-                                    req.session.usuario = {
-                                        id: user.id,
-                                        nombre: user.username
-                                    }
+                                    req.session.usuario = user
 
                                     res.cookie('userId', user.id, {
                                         maxAge: 1000 * 60 * 5
