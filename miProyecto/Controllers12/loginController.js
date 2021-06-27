@@ -23,10 +23,7 @@ const controller = {
                 .then(usuario => {
                     if (usuario) {
                         if (bcrypt.compareSync(req.body.contrasena, usuario.password)) {
-                            req.session.usuario = {
-                                id: usuario.id,
-                                nombre: usuario.username
-                            }
+                            req.session.usuario = usuario
                             if (req.body.remember) {
                                 res.cookie('userId', usuario.id, {
                                     maxAge: 1000 * 60 * 5
@@ -54,8 +51,5 @@ const controller = {
 
         ;
     },
-
 }
-
-
 module.exports = controller;

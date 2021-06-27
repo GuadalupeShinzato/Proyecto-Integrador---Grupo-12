@@ -37,11 +37,8 @@ const db = require('./database/models');
 
 app.use(function (req, res, next) {
   if (req.cookies.userId && !req.session.usuario) {
-    db.Usuario.findByPk(req.cookies.userId).then(resultado => {
-      req.session.usuario = {
-        id: resultado.id,
-        nombre: resultado.username
-      };
+    db.User.findByPk(req.cookies.userId).then(resultado => {
+      req.session.usuario = resultado
       return next();
     });
   } else {
@@ -62,6 +59,7 @@ app.use(function (req, res, next) {
 
   return next();
 });
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
