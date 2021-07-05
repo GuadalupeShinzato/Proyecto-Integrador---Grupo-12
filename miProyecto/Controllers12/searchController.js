@@ -7,7 +7,7 @@ const controller = {
                 where: {
                     [Op.or]: [{
                             title: {
-                                [Op.like]: "%" + req.query.search + "%"
+                                [Op.like]: "%" + req.query.search + "%"  //metodo GET search del partial header 
                             }
                         },
                         {

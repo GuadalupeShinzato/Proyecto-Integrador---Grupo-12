@@ -35,3 +35,5 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
+
+//crea el db para hacerlo funcionar mediante sequelize 

@@ -3,7 +3,7 @@ const Op = db.Sequelize.Op;
 
 const controller = {
     index: (req, res) => {
-        db.Product.findByPk(req.params.id, {
+        db.Product.findByPk(req.params.id, {  //params es de /:id (parametro) para un valor ene especifico
             include: [{
                 association: "comentarios",
                 include: {

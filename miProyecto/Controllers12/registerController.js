@@ -28,7 +28,7 @@ const controller = {
                                 if (!resultado) {
                                     db.User.create({
                                         name: req.body.nombre,
-                                        last_name: req.body.apellido,
+                                        last_name: req.body.apellido,  //body es por POST - nombreInput
                                         email: req.body.email,
                                         nacimiento: req.body.fecha,
                                         username: req.body.usuario,
@@ -93,7 +93,7 @@ const controller = {
                     error: 'La contraseña tiene que tener mas de tres caracteres'
                 })
             }
-        } else {
+        } else { //va al primer if, si falta algun campo tira este error. en el front esta el required
             res.render('register', {
                 error: 'No puede haber campos vacios'
             })
